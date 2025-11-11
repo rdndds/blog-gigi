@@ -12,7 +12,7 @@ const iconMap = {
 const colorMap = {
   'from-green-500 to-emerald-500': '#22c55e, #10b981',
   'from-blue-500 to-cyan-500': '#3b82f6, #06b6d4',
-  'from-purple-500 to-pink-500': '#a855f7, #ec4899',
+  'from-purple-500 to-primary-500': '#a855f7, #f97316',
   'from-orange-500 to-red-500': '#f97316, #ef4444',
 };
 

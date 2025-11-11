@@ -52,10 +52,10 @@ export default function NotFound() {
       <div className="max-w-4xl w-full">
         {/* Animated 404 */}
         <div className="mb-8 relative text-center">
-          <div className="text-[150px] md:text-[200px] font-black leading-none bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
+          <div className="text-[150px] md:text-[200px] font-black leading-none bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 bg-clip-text text-transparent animate-pulse">
             404
           </div>
-          <div className="absolute inset-0 blur-3xl opacity-30 bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500"></div>
+          <div className="absolute inset-0 blur-3xl opacity-30 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500"></div>
         </div>
 
         {/* Error Message */}
@@ -113,7 +113,7 @@ export default function NotFound() {
         </div>
 
         {/* Fun Fact */}
-        <Card className="mt-8 border-0 shadow-medium bg-gradient-to-r from-pink-100 to-purple-100">
+        <Card className="mt-8 border-0 shadow-medium bg-gradient-to-r from-primary-100 to-accent-100">
           <CardContent className="p-6 text-center">
             <p className="text-sm text-gray-700">
               <span className="font-semibold">💡 Tahukah Anda?</span> Sementara Anda di sini, jangan lupa untuk menyikat gigi 2 kali sehari dan flossing secara teratur! 🪥
@@ -122,8 +122,8 @@ export default function NotFound() {
         </Card>
 
         {/* Decorative Blobs */}
-        <div className="fixed top-10 left-10 w-32 h-32 bg-pink-300 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-        <div className="fixed bottom-10 right-10 w-40 h-40 bg-purple-300 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+        <div className="fixed top-10 left-10 w-32 h-32 bg-primary-300 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+        <div className="fixed bottom-10 right-10 w-40 h-40 bg-accent-300 rounded-full blur-3xl opacity-20 animate-pulse"></div>
       </div>
     </div>
   );

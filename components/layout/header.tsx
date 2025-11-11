@@ -48,14 +48,14 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-pink-100 bg-white">
+    <header className="sticky top-0 z-50 w-full border-b border-primary-100 bg-white">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
-          <div className="p-2 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg group-hover:scale-110 transition-transform shadow-medium">
+          <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg group-hover:scale-110 transition-transform shadow-medium">
             <img src="/images/icon.png" alt="Logo" className="w-6 h-6 text-white" />
           </div>
-          <span className="text-xl font-heading font-bold bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
+          <span className="text-xl font-heading font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
             Senyum Sehat
           </span>
         </Link>
@@ -68,8 +68,8 @@ export default function Header() {
               href={item.href}
               className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                 isActive(item.href)
-                  ? 'bg-pink-100 text-pink-700 font-semibold'
-                  : 'text-gray-700 hover:text-pink-700 hover:bg-pink-50'
+                  ? 'bg-primary-100 text-primary-700 font-semibold'
+                  : 'text-gray-700 hover:text-primary-700 hover:bg-primary-50'
               }`}
             >
               {item.name}
@@ -81,7 +81,7 @@ export default function Header() {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden hover:bg-pink-50 hover:text-pink-600 h-10 w-10"
+          className="md:hidden hover:bg-primary-50 hover:text-primary-600 h-10 w-10"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -104,19 +104,19 @@ export default function Header() {
             isAnimating ? 'translate-x-0' : 'translate-x-full'
           }`}>
             {/* Menu Header */}
-            <div className="flex items-center justify-between p-4 border-b border-pink-100">
+            <div className="flex items-center justify-between p-4 border-b border-primary-100">
               <div className="flex items-center space-x-2">
-                <div className="p-2 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg shadow-medium">
+                <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-medium">
                   <img src="/images/icon.png" alt="Logo" className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-lg font-heading font-bold bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
+                <span className="text-lg font-heading font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
                   Menu
                 </span>
               </div>
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:bg-pink-50 hover:text-pink-600 h-10 w-10"
+                className="hover:bg-primary-50 hover:text-primary-600 h-10 w-10"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <X className="w-5 h-5" />
@@ -131,8 +131,8 @@ export default function Header() {
                   href={item.href}
                   className={`flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all ${
                     isActive(item.href)
-                      ? 'bg-gradient-to-r from-pink-500 to-pink-600 text-white shadow-medium'
-                      : 'text-gray-700 hover:bg-pink-50 hover:text-pink-700 hover:translate-x-1'
+                      ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-medium'
+                      : 'text-gray-700 hover:bg-primary-50 hover:text-primary-700 hover:translate-x-1'
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -142,14 +142,14 @@ export default function Header() {
             </nav>
 
             {/* Social Media Section */}
-            <div className="p-4 border-t border-pink-100 bg-gradient-to-br from-pink-50 to-white">
+            <div className="p-4 border-t border-primary-100 bg-gradient-to-br from-primary-50 to-white">
               <h3 className="text-sm font-semibold text-gray-900 mb-3">Ikuti Kami</h3>
               <div className="flex gap-3 justify-center">
                 <a 
                   href="https://instagram.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600 text-white hover:shadow-large transition-all transform hover:scale-110"
+                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 text-white hover:shadow-large transition-all transform hover:scale-110"
                   aria-label="Instagram"
                 >
                   <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
@@ -158,7 +158,7 @@ export default function Header() {
                   href="https://youtube.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-pink-600 text-white hover:shadow-large transition-all transform hover:scale-110"
+                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-600 text-white hover:shadow-large transition-all transform hover:scale-110"
                   aria-label="YouTube"
                 >
                   <FontAwesomeIcon icon={faYoutube} className="w-6 h-6" />
@@ -167,7 +167,7 @@ export default function Header() {
                   href="https://linkedin.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-pink-500 text-white hover:shadow-large transition-all transform hover:scale-110"
+                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-500 text-white hover:shadow-large transition-all transform hover:scale-110"
                   aria-label="LinkedIn"
                 >
                   <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
