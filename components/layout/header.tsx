@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { Menu, X, Stethoscope } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Header() {
@@ -41,7 +41,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
           <div className="p-2 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg group-hover:scale-110 transition-transform shadow-medium">
-            <Stethoscope className="w-6 h-6 text-white" />
+            <img src="/images/icon.png" alt="Logo" className="w-6 h-6 text-white" />
           </div>
           <span className="text-xl font-heading font-bold bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
             Senyum Sehat
@@ -95,7 +95,7 @@ export default function Header() {
             <div className="flex items-center justify-between p-4 border-b border-pink-100">
               <div className="flex items-center space-x-2">
                 <div className="p-2 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg shadow-medium">
-                  <Stethoscope className="w-5 h-5 text-white" />
+                  <img src="/images/icon.png" alt="Logo" className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-lg font-heading font-bold bg-gradient-to-r from-pink-600 to-pink-500 bg-clip-text text-transparent">
                   Menu
