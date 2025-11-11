@@ -15,7 +15,7 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
   const [showToast, setShowToast] = useState(false);
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : url;
-  const shareText = encodeURIComponent(`${title} - Senyum Sehat`);
+  const shareText = encodeURIComponent(`${title} - Senyum Cerdas 2025`);
 
   const handleCopyLink = async () => {
     try {

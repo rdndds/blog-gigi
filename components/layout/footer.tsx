@@ -16,11 +16,11 @@ export default function Footer() {
           <Card className="border-0 shadow-medium bg-gradient-to-br from-primary-100 to-white hover:shadow-large transition-shadow">
             <CardContent className="p-6">
               <h3 className="text-2xl font-heading font-bold text-primary-600 mb-3">
-                Senyum Sehat
+                Senyum Cerdas 2025
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Blog edukasi kesehatan gigi dan mulut untuk Indonesia Hebat. 
-                Berbagi pengetahuan dari mahasiswa kesehatan gigi.
+                Kesehatan Gigi untuk Generasi Emas Indonesia.
+                Blog edukasi kesehatan gigi dan inovasi digital oleh Erdinta Ovielia Putri.
               </p>
             </CardContent>
           </Card>
@@ -37,28 +37,28 @@ export default function Footer() {
                    Beranda
                  </Link>
                  <Link
-                   href="/articles"
-                   className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
-                 >
-                   Artikel
-                 </Link>
-                 <Link
-                   href="/dental-health"
-                   className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
-                 >
-                   Kesehatan Gigi
-                 </Link>
-                 <Link
                    href="/about"
                    className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
                  >
-                   Tentang
+                   Tentang Saya
                  </Link>
                  <Link
-                   href="/hobbies"
+                   href="/edukasi"
                    className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
                  >
-                   Hobi
+                   Edukasi
+                 </Link>
+                 <Link
+                   href="/program-3d"
+                   className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
+                 >
+                   Program 3D
+                 </Link>
+                 <Link
+                   href="/articles"
+                   className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
+                 >
+                   Kontak
                  </Link>
                </div>
             </CardContent>
@@ -107,7 +107,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="text-center pt-8 border-t border-primary-200">
           <p className="text-sm text-gray-600">
-            &copy; {currentYear} <span className="font-semibold text-primary-600">Senyum Sehat</span> - Dibuat dengan 💖 oleh Shalsha Billa
+            &copy; {currentYear} <span className="font-semibold text-primary-600">Senyum Cerdas 2025</span> - Dibuat dengan 💖 oleh Erdinta Ovielia Putri
           </p>
         </div>
       </div>

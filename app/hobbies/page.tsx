@@ -87,7 +87,7 @@ export default function HobbiesPage() {
               <p className="text-gray-700 italic">
                 {data.pklQuote}
               </p>
-              <p className="text-primary-600 font-semibold mt-2">- Shalsha Billa</p>
+              <p className="text-primary-600 font-semibold mt-2">- Erdinta Ovielia Putri</p>
             </div>
           </CardContent>
         </Card>

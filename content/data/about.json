@@ -1,29 +1,29 @@
 {
-  "pageTitle": "Tentang Saya dan Blog",
-  "pageSubtitle": "Mendukung Isu Strategis Kesehatan Nasional 2025",
-  "profileName": "Shalsha Billa",
-  "profileTitle": "Mahasiswa Sarjana Terapan Kesehatan Gigi",
-  "profileBio": "Halo! Nama saya Shalsha Billa, mahasiswa Sarjana Terapan Kesehatan Gigi yang berdomisili di Kota Semarang. Blog ini dibuat sebagai media edukasi dan publikasi digital untuk mendukung Isu Strategis Kesehatan Nasional 2025, khususnya bidang deteksi dini dan pencegahan penyakit gigi dan mulut.",
-  "motto": "💬 Motto: \"Mulut Sehat, Senyum Hebat, Indonesia Kuat.\"",
+  "pageTitle": "Tentang Erdinta Ovielia Putri",
+  "pageSubtitle": "Blog Edukasi Kesehatan Gigi & Inovasi Digital",
+  "profileName": "Erdinta Ovielia Putri",
+  "profileTitle": "Mahasiswa Sarjana Terapan Kesehatan Gigi, Poltekkes Kemenkes Semarang",
+  "profileBio": "Halo! Saya Erdinta Ovielia Putri, mahasiswa Sarjana Terapan Kesehatan Gigi Poltekkes Kemenkes Semarang. Saya aktif dalam PKL di berbagai kegiatan edukasi masyarakat, terutama di sekolah dasar, posyandu, dan kegiatan UKGS. Saya mengembangkan media edukasi interaktif berbasis 3D dan video animasi untuk meningkatkan minat anak mempelajari kebersihan gigi.",
+  "motto": "💬 Motto: \"Edukasi Kreatif, Gigi Sehat, Generasi Hebat.\"",
   "purposeList": [
-    { "item": "Menyebarluaskan informasi kesehatan gigi berbasis bukti" },
-    { "item": "Mendukung program pemerintah seperti Cek Kesehatan Gratis (CKG)" },
-    { "item": "Menjadi wadah berbagi pengalaman selama praktik di Puskesmas Semarang" },
-    { "item": "Edukasi kesehatan gigi untuk masyarakat" }
+    { "item": "Pusat informasi kesehatan gigi yang edukatif" },
+    { "item": "Berbasis bukti dan dikemas dengan media digital menarik" },
+    { "item": "Fokus pada kesehatan gigi anak di era digital" },
+    { "item": "Pengembangan inovasi edukasi 3D dan AI" }
   ],
   "experienceList": [
-    { "item": "Praktik kerja lapangan di Puskesmas Kota Semarang" },
-    { "item": "Kegiatan UKGS (Usaha Kesehatan Gigi Sekolah)" },
-    { "item": "Program CKG (Cek Kesehatan Gratis) 2025" },
-    { "item": "Edukasi kesehatan gigi di sekolah dan posyandu" }
+    { "item": "Skrining gigi di sekolah, posyandu, dan komunitas" },
+    { "item": "Pengembangan media edukasi 3D dan video animasi" },
+    { "item": "Kampanye anti-gula di sekolah dengan demo phantom 3D" },
+    { "item": "Monitoring indeks plak anak setiap bulan" }
   ],
-  "missionHeading": "Misi Blog Ini",
-  "missionText1": "Blog ini bertujuan untuk menjadi sumber informasi kesehatan gigi dan mulut yang dapat dipercaya dan mudah diakses oleh masyarakat. Melalui konten edukatif yang dibuat berdasarkan pengalaman praktik lapangan dan kajian ilmiah, kami berharap dapat meningkatkan kesadaran masyarakat tentang pentingnya menjaga kesehatan gigi sejak dini.",
-  "missionText2": "Dengan mendukung program-program pemerintah seperti Cek Kesehatan Gratis (CKG) dan Usaha Kesehatan Gigi Sekolah (UKGS), kami berkomitmen untuk berkontribusi dalam upaya pencegahan dan deteksi dini masalah kesehatan gigi di Indonesia, khususnya di Kota Semarang.",
-  "locationHeading": "Lokasi Praktik",
-  "locationDescription": "Saya melaksanakan praktik kerja lapangan (PKL) di Puskesmas Karanganyar, Kota Semarang, Jawa Tengah. Di sini saya berkontribusi dalam berbagai program kesehatan gigi masyarakat.",
-  "locationName": "Puskesmas Karanganyar",
+  "missionHeading": "Visi Blog Ini",
+  "missionText1": "Menjadi pusat informasi kesehatan gigi yang edukatif, berbasis bukti, dan dikemas dengan media digital menarik. Menghadapi tantangan 'Digital Age Dental Crisis' dengan edukasi kreatif yang relevan untuk generasi digital.",
+  "missionText2": "Fokus pada isu karies anak akibat screen time tinggi, konsumsi gula berlebih, dan kebiasaan menyikat gigi yang tidak tepat. Melalui pendekatan teknologi HealthTech Education, saya berkomitmen untuk membuat edukasi gigi lebih fun, mudah dipahami, dan relevan.",
+  "locationHeading": "Puskesmas Krobokan - Lokasi Praktik",
+  "locationDescription": "Melaksanakan kegiatan edukasi kesehatan gigi dan layanan kesehatan gigi masyarakat di Puskesmas Krobokan, Semarang. Fokus pada sekolah dasar, posyandu, dan kampanye anti-gula untuk anak.",
+  "locationName": "Puskesmas Krobokan",
   "locationAddress": "Kota Semarang, Jawa Tengah",
-  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3166243929513!2d110.33179757499695!3d-6.971922193028746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70f5570ed25e2d%3A0x1fa6916eae0a771f!2sPuskesmas%20Karanganyar!5e0!3m2!1sen!2sid!4v1762852592797!5m2!1sen!2sid",
-  "googleMapsUrl": "https://maps.google.com/?q=Puskesmas+Karanganyar+Semarang"
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.291007607383!2d110.391845374997!3d-6.974952193025756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70f4ccc7082fd1%3A0xc490370519981ff0!2sPuskesmas%20Krobokan!5e0!3m2!1sen!2sid!4v1762891983166!5m2!1sen!2sid",
+  "googleMapsUrl": "https://maps.google.com/?q=Puskesmas+Krobokan+Semarang"
 }

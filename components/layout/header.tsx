@@ -34,10 +34,10 @@ export default function Header() {
 
   const navigation = [
     { name: 'Beranda', href: '/' },
-    { name: 'Artikel', href: '/articles' },
-    { name: 'Kesehatan Gigi', href: '/dental-health' },
     { name: 'Tentang Saya', href: '/about' },
-    { name: 'Hobi', href: '/hobbies' },
+    { name: 'Edukasi', href: '/edukasi' },
+    { name: 'Program 3D', href: '/program-3d' },
+    { name: 'Kontak', href: '/articles' },
   ];
 
   const isActive = (href: string) => {
@@ -56,7 +56,7 @@ export default function Header() {
             <img src="/images/icon.png" alt="Logo" className="w-6 h-6 text-white" />
           </div>
           <span className="text-xl font-heading font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
-            Senyum Sehat
+            Senyum Cerdas 2025
           </span>
         </Link>
 

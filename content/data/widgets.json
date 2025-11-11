@@ -1,34 +1,40 @@
 {
   "usefulLinks": [
     {
+      "name": "Poltekkes Kemenkes Semarang",
+      "url": "https://poltekkes-smg.ac.id/"
+    },
+    {
+      "name": "Kemenkes RI",
+      "url": "https://www.kemkes.go.id/"
+    },
+    {
       "name": "WHO Oral Health",
       "url": "https://www.who.int/health-topics/oral-health"
     },
     {
-      "name": "ADA - American Dental Association",
-      "url": "https://www.ada.org"
+      "name": "Pediatric Dental Health",
+      "url": "https://www.aap.org/en-us/advocacy-and-policy/aap-health-initiatives/Oral-Health/Pages/default.aspx"
     },
     {
-      "name": "CDC - Oral Health",
-      "url": "https://www.cdc.gov/oralhealth"
-    },
-    {
-      "name": "Indonesian Dental Association",
-      "url": "#"
-    },
-    {
-      "name": "Dental Health Foundation",
-      "url": "#"
+      "name": "Digital Health Education",
+      "url": "https://www.digitalhealth.gov/"
     }
   ],
   "locationWidget": {
-    "locationName": "Puskesmas Karanganyar",
+    "locationName": "Puskesmas Krobokan",
     "locationAddress": "Kota Semarang, Jawa Tengah",
-    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3166243929513!2d110.33179757499695!3d-6.971922193028746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70f5570ed25e2d%3A0x1fa6916eae0a771f!2sPuskesmas%20Karanganyar!5e0!3m2!1sen!2sid!4v1762852592797!5m2!1sen!2sid",
-  "googleMapsUrl": "https://maps.google.com/?q=Puskesmas+Karanganyar+Semarang"
-},
-"whatsappWidget": {
-  "phoneNumber": "6281234567890",
-  "message": "Halo, saya ingin bertanya tentang kesehatan gigi..."
-}
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.291007607383!2d110.391845374997!3d-6.974952193025756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70f4ccc7082fd1%3A0xc490370519981ff0!2sPuskesmas%20Krobokan!5e0!3m2!1sen!2sid!4v1762891983166!5m2!1sen!2sid",
+    "googleMapsUrl": "https://maps.google.com/?q=Puskesmas+Krobokan+Semarang"
+  },
+  "whatsappWidget": {
+    "phoneNumber": "6281234567890",
+    "message": "Halo Erdinta Ovielia, saya tertarik dengan program edukasi 3D kesehatan gigi..."
+  },
+  "translateWidget": {
+    "enabled": true,
+    "defaultLanguage": "id",
+    "languages": ["id", "en"],
+    "showLanguageSelector": true
+  }
 }

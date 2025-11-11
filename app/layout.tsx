@@ -6,9 +6,9 @@ import { getWidgetsData } from '@/lib/content';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Senyum Sehat untuk Indonesia Hebat - Blog Kesehatan Gigi',
-  description: 'Blog edukasi kesehatan gigi dan mulut oleh Shalsha Billa - Mendukung Program CKG Nasional 2025 di Kota Semarang',
-  keywords: 'kesehatan gigi, Semarang, CKG, UKGS, Puskesmas, kesehatan mulut',
+  title: 'Senyum Cerdas 2025 - Kesehatan Gigi untuk Generasi Emas Indonesia',
+  description: 'Blog edukasi kesehatan gigi dan inovasi digital kesehatan gigi dan mulut oleh Erdinta Ovielia Putri - Mahasiswa Poltekkes Kemenkes Semarang',
+  keywords: 'kesehatan gigi anak, digital age, karies, anti-gula, edukasi 3D, Semarang, Poltekkes, kesehatan mulut',
   icons: {
     icon: '/images/icon.png',
   },

@@ -1,0 +1,50 @@
+{
+  "pageTitle": "Edukasi Kesehatan Gigi & Mulut",
+  "pageSubtitle": "Tips Wajib untuk Anak & Remaja di Era Digital",
+  "introHeading": "Tips Wajib untuk Kesehatan Gigi Anak & Remaja",
+  "introText": "Di era digital 2025, kebiasaan anak berubah drastis. Durasi screen time meningkat, konsumsi makanan manis naik, dan frekuensi menyikat gigi tidak seimbang. Berikut panduan lengkap untuk menjaga kesehatan gigi anak:",
+  "tipsList": [
+    {
+      "icon": "🦷",
+      "title": "Sikat Gigi 2× Sehari",
+      "description": "Pagi setelah sarapan dan malam sebelum tidur. Gunakan pasta gigi berfluor dengan jumlah biji seukuran kacang untuk anak.",
+      "time": "Waktu Golden Time"
+    },
+    {
+      "icon": "🍭",
+      "title": "Kurangi Makanan/Minuman Manis",
+      "description": "Batasi konsumsi gula hingga 25g per hari. Hindari minuman kemasan yang menyumbang 40-60% konsumsi gula harian anak.",
+      "alert": "Zero Sugar Campaign"
+    },
+    {
+      "icon": "🪥",
+      "title": "Gunakan Pasta Gigi Berfluor",
+      "description": "Pilih pasta gigi dengan kandungan fluoride 1000-1500 ppm untuk anak usia sekolah untuk mencegah karies.",
+      "expert": "Recommended by Dentists"
+    },
+    {
+      "icon": "🏥",
+      "title": "Periksa Gigi Tiap 6 Bulan",
+      "description": "Lakukan pemeriksaan rutin ke Puskesmas atau dokter gigi untuk deteksi dini masalah kesehatan gigi.",
+      "reminder": "Setiap 6 bulan sekali"
+    },
+    {
+      "icon": "📱",
+      "title": "Batasi Screen Time < 2 Jam",
+      "description": "Batasi penggunaan gadget maksimal 2 jam per hari untuk anak. Screen time berlebih meningkatkan risiko karies digital age.",
+      "urgent": "Digital Age Crisis"
+    },
+    {
+      "icon": "💧",
+      "title": "Minum Air Putih Cukup",
+      "description": "Air putih membantu membersihkan sisa makanan dan menjaga keseimbangan pH mulut alami.",
+      "hydration": "8 gelas per hari"
+    }
+  ],
+  "posterHeading": "Poster Edukasi 6 Langkah Sikat Gigi",
+  "posterDescription": "Download poster edukasi untuk dipasang di kamar mandi anak atau sekolah. Desain menarik dengan langkah-langkah visual yang mudah diikuti.",
+  "phantomHeading": "Demo Edukasi dengan Phantom 3D",
+  "phantomDescription": "Model gigi 3D realistis untuk demonstrasi cara sikat gigi yang benar dan dampak gula pada kesehatan gigi. Alat edukasi interaktif untuk anak-anak.",
+  "callToAction": "Butuh Konsultasi?",
+  "callToActionText": "Hubungi saya untuk edukasi kesehatan gigi di sekolah atau komunitas Anda."
+}

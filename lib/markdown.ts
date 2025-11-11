@@ -129,7 +129,7 @@ async function fetchPageTitle(url: string): Promise<string> {
   try {
     const response = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; Senyum Sehat Bot/1.0)',
+        'User-Agent': 'Mozilla/5.0 (compatible; Senyum Cerdas 2025 Bot/1.0)',
       },
       signal: AbortSignal.timeout(5000), // 5 second timeout
     });
