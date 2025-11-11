@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,8 +17,18 @@ export default function Header() {
     if (mobileMenuOpen) {
       setIsAnimating(true);
       document.body.style.overflow = 'hidden';
+      // Hide WhatsApp widget
+      const whatsappWidget = document.querySelector('.fixed.bottom-6.right-6.z-50') as HTMLElement;
+      if (whatsappWidget) {
+        whatsappWidget.style.display = 'none';
+      }
     } else {
       document.body.style.overflow = 'unset';
+      // Show WhatsApp widget
+      const whatsappWidget = document.querySelector('.fixed.bottom-6.right-6.z-50') as HTMLElement;
+      if (whatsappWidget) {
+        whatsappWidget.style.display = 'block';
+      }
     }
   }, [mobileMenuOpen]);
 
@@ -69,10 +81,10 @@ export default function Header() {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden hover:bg-pink-50 hover:text-pink-600"
+          className="md:hidden hover:bg-pink-50 hover:text-pink-600 h-10 w-10"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? <X /> : <Menu />}
+          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
       </nav>
 
@@ -88,7 +100,7 @@ export default function Header() {
           />
           
           {/* Slide-out Menu */}
-          <div className={`fixed top-0 right-0 bottom-0 w-[280px] bg-white shadow-xl z-50 md:hidden transition-transform duration-300 ease-in-out ${
+          <div className={`fixed top-0 right-0 bottom-0 w-full bg-white shadow-xl z-50 md:hidden transition-transform duration-300 ease-in-out flex flex-col ${
             isAnimating ? 'translate-x-0' : 'translate-x-full'
           }`}>
             {/* Menu Header */}
@@ -104,7 +116,7 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:bg-pink-50 hover:text-pink-600"
+                className="hover:bg-pink-50 hover:text-pink-600 h-10 w-10"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <X className="w-5 h-5" />
@@ -112,7 +124,7 @@ export default function Header() {
             </div>
             
             {/* Navigation Links */}
-            <nav className="p-4 space-y-2">
+            <nav className="flex-1 p-4 space-y-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -128,6 +140,40 @@ export default function Header() {
                 </Link>
               ))}
             </nav>
+
+            {/* Social Media Section */}
+            <div className="p-4 border-t border-pink-100 bg-gradient-to-br from-pink-50 to-white">
+              <h3 className="text-sm font-semibold text-gray-900 mb-3">Ikuti Kami</h3>
+              <div className="flex gap-3 justify-center">
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-pink-600 text-white hover:shadow-large transition-all transform hover:scale-110"
+                  aria-label="Instagram"
+                >
+                  <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://youtube.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-pink-600 text-white hover:shadow-large transition-all transform hover:scale-110"
+                  aria-label="YouTube"
+                >
+                  <FontAwesomeIcon icon={faYoutube} className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-pink-500 text-white hover:shadow-large transition-all transform hover:scale-110"
+                  aria-label="LinkedIn"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                </a>
+              </div>
+            </div>
           </div>
         </>
       )}

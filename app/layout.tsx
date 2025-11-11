@@ -22,7 +22,7 @@ export default function RootLayout({
   const widgetsData = getWidgetsData();
 
   return (
-    <html lang="id">
+    <html lang="id" data-scroll-behavior="smooth">
       <body className="min-h-screen bg-gray-50 font-sans antialiased">
         <Header />
         <main className="min-h-screen">
