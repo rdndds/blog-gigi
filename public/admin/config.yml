@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-username/your-repo-name
+  repo: rdndds/blog-gigi
   branch: main
 
 media_folder: "public/images/uploads"
