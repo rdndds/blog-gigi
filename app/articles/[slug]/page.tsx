@@ -1,5 +1,5 @@
 import React from 'react';
-import { getArticleBySlug, getArticles, getRelatedArticles } from '@/lib/markdown';
+import { getArticleBySlug, getArticles, getRelatedArticles, remarkBreaks } from '@/lib/markdown';
 import { notFound } from 'next/navigation';
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -95,7 +95,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             />
           )}
            <ReactMarkdown
-             remarkPlugins={[remarkGfm, groupConsecutiveImages]}
+             remarkPlugins={[remarkGfm, groupConsecutiveImages, remarkBreaks]}
             components={{
               h1: ({node, ...props}) => <h1 className="text-4xl font-heading font-bold text-gray-900 mt-8 mb-4" {...props} />,
               h2: ({node, ...props}) => <h2 className="text-3xl font-heading font-semibold text-gray-900 mt-6 mb-3" {...props} />,
@@ -120,6 +120,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               li: ({node, ...props}) => <li className="text-gray-700" {...props} />,
               strong: ({node, ...props}) => <strong className="font-semibold text-gray-900" {...props} />,
               em: ({node, ...props}) => <em className="italic" {...props} />,
+              br: () => <br className="my-1" />,
               a: ({node, children, ...props}) => {
                 // Check if link contains only an image
                 const childArray = React.Children.toArray(children);

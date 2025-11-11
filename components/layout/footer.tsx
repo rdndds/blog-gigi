@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-br from-pink-50 via-white to-pink-100 mt-20 py-12">
+    <footer className="bg-pink-50 mt-20 py-12">
       <div className="container mx-auto px-4">
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">

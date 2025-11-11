@@ -5,10 +5,6 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  // Disable Turbopack for build to use webpack
-  experimental: {
-    turbo: false,
-  },
 }
 
 module.exports = nextConfig

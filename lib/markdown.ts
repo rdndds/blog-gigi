@@ -61,6 +61,53 @@ export function groupConsecutiveImages() {
   };
 }
 
+// Custom remark plugin to convert single line breaks to <br> tags
+export function remarkBreaks() {
+  return (tree: any) => {
+    function visit(node: any) {
+      if (node.type === 'paragraph' && node.children) {
+        const newChildren: any[] = [];
+        
+        for (let i = 0; i < node.children.length; i++) {
+          const child = node.children[i];
+          
+          if (child.type === 'text') {
+            // Split text on single newlines
+            const parts = child.value.split('\n');
+            
+            for (let j = 0; j < parts.length; j++) {
+              if (parts[j]) {
+                newChildren.push({
+                  type: 'text',
+                  value: parts[j]
+                });
+              }
+              
+              // Add break between parts (but not after the last one)
+              if (j < parts.length - 1) {
+                newChildren.push({
+                  type: 'break'
+                });
+              }
+            }
+          } else {
+            newChildren.push(child);
+          }
+        }
+        
+        node.children = newChildren;
+      }
+      
+      // Recursively visit children
+      if (node.children) {
+        node.children.forEach(visit);
+      }
+    }
+    
+    tree.children.forEach(visit);
+  };
+}
+
 const articlesDirectory = path.join(process.cwd(), 'content/articles');
 
 export interface Article {
@@ -75,6 +122,65 @@ export interface Article {
   readTime: string;
   gallery?: Array<{ image: string; title?: string }>;
   relatedLinks?: Array<{ title: string; url: string }>;
+}
+
+// Fetch page title from URL
+async function fetchPageTitle(url: string): Promise<string> {
+  try {
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; Senyum Sehat Bot/1.0)',
+      },
+      signal: AbortSignal.timeout(5000), // 5 second timeout
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch');
+    }
+    
+    const html = await response.text();
+    
+    // Try to extract title from HTML
+    const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+    if (titleMatch && titleMatch[1]) {
+      return titleMatch[1].trim();
+    }
+    
+    // Fallback to og:title
+    const ogTitleMatch = html.match(/<meta[^>]*property=["']og:title["'][^>]*content=["']([^"']+)["']/i);
+    if (ogTitleMatch && ogTitleMatch[1]) {
+      return ogTitleMatch[1].trim();
+    }
+    
+    // If no title found, return domain name
+    return new URL(url).hostname.replace('www.', '');
+  } catch (error) {
+    // On error, return domain name
+    try {
+      return new URL(url).hostname.replace('www.', '');
+    } catch {
+      return 'External Link';
+    }
+  }
+}
+
+// Process related links and fetch missing titles
+async function processRelatedLinks(links: Array<{ title?: string; url: string }>): Promise<Array<{ title: string; url: string }>> {
+  if (!links || links.length === 0) return [];
+  
+  const processed = await Promise.all(
+    links.map(async (link) => {
+      if (link.title && link.title.trim()) {
+        return { title: link.title, url: link.url };
+      }
+      
+      // Fetch title if missing
+      const title = await fetchPageTitle(link.url);
+      return { title, url: link.url };
+    })
+  );
+  
+  return processed;
 }
 
 export async function getArticles(): Promise<Article[]> {
@@ -118,6 +224,9 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
+    // Process related links and fetch missing titles
+    const relatedLinks = await processRelatedLinks(data.relatedLinks || []);
+
      return {
       slug,
       title: data.title || 'Untitled',
@@ -129,7 +238,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
       tags: data.tags || [],
       readTime: calculateReadTime(content),
       gallery: data.gallery || [],
-      relatedLinks: data.relatedLinks || [],
+      relatedLinks,
     };
   } catch {
     return null;

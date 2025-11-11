@@ -49,7 +49,7 @@ collections:
         hint: "Tambahkan link eksternal yang relevan dengan artikel"
         collapsed: true
         fields:
-          - { label: "Judul Link", name: "title", widget: "string", required: true, hint: "Judul/deskripsi link" }
+          - { label: "Judul Link", name: "title", widget: "string", required: false, hint: "Opsional - akan diambil otomatis dari URL jika kosong" }
           - { label: "URL", name: "url", widget: "string", required: true, hint: "URL lengkap dengan https://" }
       - label: "Konten Artikel"
         name: "body"
