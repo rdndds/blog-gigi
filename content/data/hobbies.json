@@ -1,0 +1,36 @@
+{
+  "pageTitle": "Hobi Saya",
+  "pageDescription": "Selain belajar dan berpraktik di dunia kesehatan gigi, saya memiliki beberapa hobi yang membantu menjaga keseimbangan antara pekerjaan dan kehidupan pribadi.",
+  "hobbies": [
+    {
+      "title": "Bermain Tenis",
+      "description": "Menjaga kebugaran dan semangat sportif melalui olahraga tenis. Aktivitas ini membantu saya tetap sehat dan energik dalam menjalani aktivitas sebagai mahasiswa kesehatan gigi.",
+      "icon": "Heart",
+      "color": "from-green-500 to-emerald-500"
+    },
+    {
+      "title": "Jalan-jalan / Travelling",
+      "description": "Mengeksplorasi tempat-tempat baru untuk menikmati keindahan alam dan budaya lokal. Travelling membuka wawasan saya dan memberikan inspirasi baru dalam kehidupan.",
+      "icon": "Plane",
+      "color": "from-blue-500 to-cyan-500"
+    },
+    {
+      "title": "Mencari Pengalaman Baru",
+      "description": "Selalu terbuka untuk pengalaman dan pembelajaran baru yang dapat memperluas wawasan. Hal ini menginspirasi saya dalam memberikan pelayanan kesehatan dengan empati dan kreativitas.",
+      "icon": "Sparkles",
+      "color": "from-purple-500 to-pink-500"
+    },
+    {
+      "title": "Dokumentasi Kegiatan",
+      "description": "Mengabadikan momen-momen penting selama praktik kerja lapangan di Puskesmas Semarang dan kegiatan edukasi kesehatan gigi di masyarakat.",
+      "icon": "Camera",
+      "color": "from-orange-500 to-red-500"
+    }
+  ],
+  "balanceHeading": "Keseimbangan Hidup",
+  "balanceText1": "Hobi-hobi ini membantu saya menyalurkan kreativitas dan meningkatkan keterampilan komunikasi kesehatan kepada masyarakat. Melalui olahraga, travelling, dan mencari pengalaman baru, saya dapat menjaga keseimbangan antara kehidupan akademik dan kehidupan pribadi.",
+  "balanceText2": "Pengalaman dari berbagai kegiatan ini memberikan perspektif baru dalam memberikan edukasi kesehatan gigi kepada masyarakat. Saya percaya bahwa seorang tenaga kesehatan yang seimbang akan mampu memberikan pelayanan yang lebih baik dan penuh empati.",
+  "pklHeading": "📸 Pengalaman PKL di Puskesmas",
+  "pklDescription": "Selama praktik kerja lapangan (PKL) di Puskesmas Karanganyar Semarang, saya mendapatkan banyak pengalaman berharga dalam memberikan pelayanan kesehatan gigi kepada masyarakat.",
+  "pklQuote": "\"Setiap pengalaman adalah pembelajaran berharga yang membentuk saya menjadi tenaga kesehatan gigi yang lebih baik dan lebih peduli terhadap kesehatan masyarakat.\""
+}

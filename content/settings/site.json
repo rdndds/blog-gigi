@@ -1,0 +1,15 @@
+{
+  "siteName": "Senyum Sehat untuk Indonesia Hebat",
+  "description": "Blog edukasi kesehatan gigi dan mulut oleh Shalsha Billa - Mendukung Program CKG Nasional 2025 di Kota Semarang",
+  "url": "https://your-site-url.com",
+  "whatsapp": {
+    "phoneNumber": "628123456789",
+    "defaultMessage": "Halo, saya ingin bertanya tentang kesehatan gigi..."
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "twitter": "",
+    "linkedin": ""
+  }
+}

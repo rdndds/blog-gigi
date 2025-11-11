@@ -1,0 +1,258 @@
+backend:
+  name: github
+  repo: your-username/your-repo-name
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Enable editor preview
+local_backend: true
+
+collections:
+  - name: "articles"
+    label: "Artikel"
+    label_singular: "Artikel"
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    editor:
+      preview: true
+    fields:
+      - { label: "Judul", name: "title", widget: "string", required: true }
+      - { label: "Tanggal Publikasi", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: true }
+      - { label: "Excerpt/Ringkasan", name: "excerpt", widget: "text", required: false, hint: "Ringkasan singkat artikel yang akan ditampilkan di listing" }
+      - { label: "Gambar Utama", name: "image", widget: "image", required: false, hint: "Gambar cover artikel" }
+      - { label: "Penulis", name: "author", widget: "string", default: "Shalsha Billa", required: false }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: true
+        hint: "Minimal 1 tag untuk artikel terkait"
+        default: ["kesehatan"]
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - label: "Galeri Gambar"
+        name: "gallery"
+        widget: "list"
+        required: false
+        hint: "Upload beberapa gambar untuk ditampilkan di bagian galeri"
+        collapsed: true
+        fields:
+          - { label: "Gambar", name: "image", widget: "image", required: true }
+          - { label: "Judul/Caption", name: "title", widget: "string", required: false, hint: "Judul yang akan ditampilkan di lightbox" }
+      - label: "Link Terkait"
+        name: "relatedLinks"
+        widget: "list"
+        required: false
+        hint: "Tambahkan link eksternal yang relevan dengan artikel"
+        collapsed: true
+        fields:
+          - { label: "Judul Link", name: "title", widget: "string", required: true, hint: "Judul/deskripsi link" }
+          - { label: "URL", name: "url", widget: "string", required: true, hint: "URL lengkap dengan https://" }
+      - label: "Konten Artikel"
+        name: "body"
+        widget: "markdown"
+        required: true
+        hint: "Konten utama artikel dalam format Markdown"
+        modes: ["rich_text", "raw"]
+        editor_components:
+          - "image"
+          - "code-block"
+  
+  - name: "data"
+    label: "Konten Halaman"
+    label_singular: "Konten"
+    files:
+      - label: "Hero Section (Homepage)"
+        name: "hero"
+        file: "content/data/hero.json"
+        fields:
+          - { label: "Badge Text", name: "badgeText", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Highlight Text", name: "highlightText", widget: "string", hint: "Teks yang di-highlight" }
+          - { label: "Deskripsi", name: "description", widget: "text" }
+          - { label: "Primary Button Text", name: "primaryButtonText", widget: "string" }
+          - { label: "Primary Button Link", name: "primaryButtonLink", widget: "string" }
+          - { label: "Secondary Button Text", name: "secondaryButtonText", widget: "string" }
+          - { label: "Secondary Button Link", name: "secondaryButtonLink", widget: "string" }
+      
+      - label: "Halaman About (Tentang Saya)"
+        name: "about"
+        file: "content/data/about.json"
+        fields:
+          - { label: "Page Title", name: "pageTitle", widget: "string" }
+          - { label: "Page Subtitle", name: "pageSubtitle", widget: "string" }
+          - { label: "Profile Name", name: "profileName", widget: "string" }
+          - { label: "Profile Title", name: "profileTitle", widget: "string" }
+          - { label: "Profile Bio", name: "profileBio", widget: "text" }
+          - { label: "Motto", name: "motto", widget: "string" }
+          - label: "Purpose List"
+            name: "purposeList"
+            widget: "list"
+            fields:
+              - { label: "Item", name: "item", widget: "string" }
+          - label: "Experience List"
+            name: "experienceList"
+            widget: "list"
+            fields:
+              - { label: "Item", name: "item", widget: "string" }
+          - { label: "Mission Heading", name: "missionHeading", widget: "string" }
+          - { label: "Mission Text 1", name: "missionText1", widget: "text" }
+          - { label: "Mission Text 2", name: "missionText2", widget: "text" }
+          - { label: "Location Heading", name: "locationHeading", widget: "string" }
+          - { label: "Location Description", name: "locationDescription", widget: "text" }
+          - { label: "Location Name", name: "locationName", widget: "string" }
+          - { label: "Location Address", name: "locationAddress", widget: "string" }
+          - { label: "Map Embed URL", name: "mapEmbedUrl", widget: "string", hint: "Google Maps embed URL" }
+          - { label: "Google Maps URL", name: "googleMapsUrl", widget: "string" }
+      
+      - label: "Halaman Hobbies (Hobi)"
+        name: "hobbies"
+        file: "content/data/hobbies.json"
+        fields:
+          - { label: "Page Title", name: "pageTitle", widget: "string" }
+          - { label: "Page Description", name: "pageDescription", widget: "text" }
+          - label: "Hobbies"
+            name: "hobbies"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icon", name: "icon", widget: "string", hint: "Lucide icon name" }
+              - { label: "Color", name: "color", widget: "string", hint: "Tailwind gradient classes" }
+          - { label: "Balance Heading", name: "balanceHeading", widget: "string" }
+          - { label: "Balance Text 1", name: "balanceText1", widget: "text" }
+          - { label: "Balance Text 2", name: "balanceText2", widget: "text" }
+          - { label: "PKL Heading", name: "pklHeading", widget: "string" }
+          - { label: "PKL Description", name: "pklDescription", widget: "text" }
+          - { label: "PKL Quote", name: "pklQuote", widget: "text" }
+      
+      - label: "Widgets Configuration"
+        name: "widgets"
+        file: "content/data/widgets.json"
+        fields:
+          - label: "Useful Links"
+            name: "usefulLinks"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Location Widget"
+            name: "locationWidget"
+            widget: "object"
+            fields:
+              - { label: "Location Name", name: "locationName", widget: "string" }
+              - { label: "Location Address", name: "locationAddress", widget: "string" }
+              - { label: "Map Embed URL", name: "mapEmbedUrl", widget: "string" }
+              - { label: "Google Maps URL", name: "googleMapsUrl", widget: "string" }
+          - label: "WhatsApp Widget"
+            name: "whatsappWidget"
+            widget: "object"
+            fields:
+              - { label: "Phone Number", name: "phoneNumber", widget: "string", hint: "Format: 628xxx (tanpa +)" }
+              - { label: "Default Message", name: "message", widget: "string" }
+      
+      - label: "Halaman Dental Health (Kesehatan Gigi)"
+        name: "dental-health"
+        file: "content/data/dental-health.json"
+        fields:
+          - { label: "Page Title", name: "pageTitle", widget: "string" }
+          - { label: "Page Subtitle", name: "pageSubtitle", widget: "string" }
+          - label: "Intro Section"
+            name: "introSection"
+            widget: "object"
+            fields:
+              - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+              - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+          - label: "Tips Section"
+            name: "tipsSection"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Tips"
+                name: "tips"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          - label: "Prevention Section"
+            name: "preventionSection"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Categories"
+                name: "categories"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Items"
+                    name: "items"
+                    widget: "list"
+                    field: { label: "Item", name: "item", widget: "string" }
+          - label: "Program Section"
+            name: "programSection"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Programs"
+                name: "programs"
+                widget: "list"
+                field: { label: "Program", name: "program", widget: "string" }
+              - { label: "Motto", name: "motto", widget: "string" }
+              - { label: "Call to Action", name: "callToAction", widget: "text" }
+          - label: "Resources Section"
+            name: "resourcesSection"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Resources"
+                name: "resources"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+
+  - name: "settings"
+    label: "Pengaturan Situs"
+    files:
+      - label: "Informasi Situs"
+        name: "site"
+        file: "content/settings/site.json"
+        fields:
+          - { label: "Nama Situs", name: "siteName", widget: "string" }
+          - { label: "Deskripsi", name: "description", widget: "text" }
+          - { label: "URL", name: "url", widget: "string" }
+          - label: "Kontak WhatsApp"
+            name: "whatsapp"
+            widget: "object"
+            fields:
+              - { label: "Nomor Telepon", name: "phoneNumber", widget: "string", hint: "Format: 628123456789 (tanpa +)" }
+              - { label: "Pesan Default", name: "defaultMessage", widget: "string", default: "Halo, saya ingin bertanya..." }
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "Twitter", name: "twitter", widget: "string", required: false }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+      
+      - label: "Program CKG"
+        name: "ckg"
+        file: "content/settings/ckg.json"
+        fields:
+          - { label: "Judul Program", name: "title", widget: "string" }
+          - { label: "Tahun", name: "year", widget: "number", value_type: "int" }
+          - { label: "Target", name: "target", widget: "text" }
+          - label: "Statistik"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Nilai", name: "value", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string", required: false }

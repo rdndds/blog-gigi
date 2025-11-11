@@ -1,0 +1,22 @@
+{
+  "title": "Program CKG Nasional 2025",
+  "year": 2025,
+  "target": "Meningkatkan kesehatan gigi dan mulut anak sekolah di Kota Semarang",
+  "stats": [
+    {
+      "label": "Sekolah Binaan",
+      "value": "150+",
+      "icon": "School"
+    },
+    {
+      "label": "Siswa Terlayani",
+      "value": "25,000+",
+      "icon": "Users"
+    },
+    {
+      "label": "Puskesmas",
+      "value": "37",
+      "icon": "Building"
+    }
+  ]
+}

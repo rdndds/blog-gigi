@@ -1,0 +1,29 @@
+{
+  "pageTitle": "Tentang Saya dan Blog",
+  "pageSubtitle": "Mendukung Isu Strategis Kesehatan Nasional 2025",
+  "profileName": "Shalsha Billa",
+  "profileTitle": "Mahasiswa Sarjana Terapan Kesehatan Gigi",
+  "profileBio": "Halo! Nama saya Shalsha Billa, mahasiswa Sarjana Terapan Kesehatan Gigi yang berdomisili di Kota Semarang. Blog ini dibuat sebagai media edukasi dan publikasi digital untuk mendukung Isu Strategis Kesehatan Nasional 2025, khususnya bidang deteksi dini dan pencegahan penyakit gigi dan mulut.",
+  "motto": "💬 Motto: \"Mulut Sehat, Senyum Hebat, Indonesia Kuat.\"",
+  "purposeList": [
+    { "item": "Menyebarluaskan informasi kesehatan gigi berbasis bukti" },
+    { "item": "Mendukung program pemerintah seperti Cek Kesehatan Gratis (CKG)" },
+    { "item": "Menjadi wadah berbagi pengalaman selama praktik di Puskesmas Semarang" },
+    { "item": "Edukasi kesehatan gigi untuk masyarakat" }
+  ],
+  "experienceList": [
+    { "item": "Praktik kerja lapangan di Puskesmas Kota Semarang" },
+    { "item": "Kegiatan UKGS (Usaha Kesehatan Gigi Sekolah)" },
+    { "item": "Program CKG (Cek Kesehatan Gratis) 2025" },
+    { "item": "Edukasi kesehatan gigi di sekolah dan posyandu" }
+  ],
+  "missionHeading": "Misi Blog Ini",
+  "missionText1": "Blog ini bertujuan untuk menjadi sumber informasi kesehatan gigi dan mulut yang dapat dipercaya dan mudah diakses oleh masyarakat. Melalui konten edukatif yang dibuat berdasarkan pengalaman praktik lapangan dan kajian ilmiah, kami berharap dapat meningkatkan kesadaran masyarakat tentang pentingnya menjaga kesehatan gigi sejak dini.",
+  "missionText2": "Dengan mendukung program-program pemerintah seperti Cek Kesehatan Gratis (CKG) dan Usaha Kesehatan Gigi Sekolah (UKGS), kami berkomitmen untuk berkontribusi dalam upaya pencegahan dan deteksi dini masalah kesehatan gigi di Indonesia, khususnya di Kota Semarang.",
+  "locationHeading": "Lokasi Praktik",
+  "locationDescription": "Saya melaksanakan praktik kerja lapangan (PKL) di Puskesmas Karanganyar, Kota Semarang, Jawa Tengah. Di sini saya berkontribusi dalam berbagai program kesehatan gigi masyarakat.",
+  "locationName": "Puskesmas Karanganyar",
+  "locationAddress": "Kota Semarang, Jawa Tengah",
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3166243929513!2d110.33179757499695!3d-6.971922193028746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70f5570ed25e2d%3A0x1fa6916eae0a771f!2sPuskesmas%20Karanganyar!5e0!3m2!1sen!2sid!4v1762852592797!5m2!1sen!2sid",
+  "googleMapsUrl": "https://maps.google.com/?q=Puskesmas+Karanganyar+Semarang"
+}
