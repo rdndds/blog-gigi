@@ -21,13 +21,6 @@ export function getHobbiesData() {
   return getContentData('hobbies.json');
 }
 
-export function getEdukasiData() {
-  return getContentData('edukasi.json');
-}
-
-export function getProgram3DData() {
-  return getContentData('program-3d.json');
-}
 
 export function getWidgetsData() {
   return getContentData('widgets.json');

@@ -34,10 +34,10 @@ export default function Header() {
 
   const navigation = [
     { name: 'Beranda', href: '/' },
+    { name: 'Kesehatan Gigi', href: '/dental-health' },
     { name: 'Tentang Saya', href: '/about' },
-    { name: 'Edukasi', href: '/edukasi' },
-    { name: 'Program 3D', href: '/program-3d' },
-    { name: 'Kontak', href: '/articles' },
+    { name: 'Hobi', href: '/hobbies' },
+    { name: 'Artikel', href: '/articles' },
   ];
 
   const isActive = (href: string) => {

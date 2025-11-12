@@ -1,36 +1,36 @@
 {
-  "pageTitle": "Hobi Saya",
-  "pageDescription": "Selain belajar dan berpraktik di dunia kesehatan gigi, saya memiliki beberapa hobi yang membantu menjaga keseimbangan antara pekerjaan dan kehidupan pribadi.",
+  "pageTitle": "🎨 Hobi Saya",
+  "pageDescription": "Selain sebagai mahasiswa kesehatan gigi, saya memiliki beberapa hobi yang membantu menjaga keseimbangan hidup dan memberikan energi positif dalam kehidupan sehari-hari.",
   "hobbies": [
     {
-      "title": "Bermain Tenis",
-      "description": "Menjaga kebugaran dan semangat sportif melalui olahraga tenis. Aktivitas ini membantu saya tetap sehat dan energik dalam menjalani aktivitas sebagai mahasiswa kesehatan gigi.",
+      "title": "Hiking",
+      "description": "Menjelajahi alam dan mendaki gunung untuk menjaga kebugaran fisik dan ketenangan jiwa. Hiking membantu saya refresh dan mendapatkan inspirasi baru.",
       "icon": "Heart",
       "color": "from-green-500 to-emerald-500"
     },
     {
-      "title": "Jalan-jalan / Travelling",
-      "description": "Mengeksplorasi tempat-tempat baru untuk menikmati keindahan alam dan budaya lokal. Travelling membuka wawasan saya dan memberikan inspirasi baru dalam kehidupan.",
+      "title": "Memasak",
+      "description": "Mencoba berbagai resep baru dan mengkreasi hidangan sehat. Memasak adalah cara saya untuk berekreasi dan mengekspresikan kreativitas di luar dunia kedokteran gigi.",
+      "icon": "Sparkles",
+      "color": "from-orange-500 to-red-500"
+    },
+    {
+      "title": "Bermain Video Game",
+      "description": "Bermain game untuk relaksasi dan mengasah kemampuan problem solving. Game juga membantu saya tetap terhubung dengan perkembangan teknologi digital.",
+      "icon": "Camera",
+      "color": "from-purple-500 to-primary-500"
+    },
+    {
+      "title": "Travelling dan Eksplorasi Wisata",
+      "description": "Mengunjungi tempat-tempat baru untuk menikmati keindahan alam dan keberagaman budaya. Travelling memberikan pengalaman berharga dan memperluas wawasan.",
       "icon": "Plane",
       "color": "from-blue-500 to-cyan-500"
-    },
-    {
-      "title": "Mencari Pengalaman Baru",
-      "description": "Selalu terbuka untuk pengalaman dan pembelajaran baru yang dapat memperluas wawasan. Hal ini menginspirasi saya dalam memberikan pelayanan kesehatan dengan empati dan kreativitas.",
-      "icon": "Sparkles",
-      "color": "from-purple-500 to-pink-500"
-    },
-    {
-      "title": "Dokumentasi Kegiatan",
-      "description": "Mengabadikan momen-momen penting selama praktik kerja lapangan di Puskesmas Semarang dan kegiatan edukasi kesehatan gigi di masyarakat.",
-      "icon": "Camera",
-      "color": "from-orange-500 to-red-500"
     }
   ],
-  "balanceHeading": "Keseimbangan Hidup",
-  "balanceText1": "Hobi-hobi ini membantu saya menyalurkan kreativitas dan meningkatkan keterampilan komunikasi kesehatan kepada masyarakat. Melalui olahraga, travelling, dan mencari pengalaman baru, saya dapat menjaga keseimbangan antara kehidupan akademik dan kehidupan pribadi.",
-  "balanceText2": "Pengalaman dari berbagai kegiatan ini memberikan perspektif baru dalam memberikan edukasi kesehatan gigi kepada masyarakat. Saya percaya bahwa seorang tenaga kesehatan yang seimbang akan mampu memberikan pelayanan yang lebih baik dan penuh empati.",
-  "pklHeading": "📸 Pengalaman PKL di Puskesmas",
-  "pklDescription": "Selama praktik kerja lapangan (PKL) di Puskesmas Karanganyar Semarang, saya mendapatkan banyak pengalaman berharga dalam memberikan pelayanan kesehatan gigi kepada masyarakat.",
-  "pklQuote": "\"Setiap pengalaman adalah pembelajaran berharga yang membentuk saya menjadi tenaga kesehatan gigi yang lebih baik dan lebih peduli terhadap kesehatan masyarakat.\""
+  "balanceHeading": "Keseimbangan antara Akademik dan Hobi",
+  "balanceText1": "Hobi-hobi ini membantu saya menjaga keseimbangan antara kehidupan akademik sebagai mahasiswa kesehatan gigi dengan kebutuhan rekreasi dan personal growth. Setiap hobi memberikan perspektif unik yang mendukung pengembangan saya sebagai calon tenaga kesehatan.",
+  "balanceText2": "Melalui hiking, memasak, gaming, dan travelling, saya dapat mengembangkan soft skills seperti ketahanan fisik, kreativitas, strategic thinking, dan cultural awareness yang berguna dalam berinteraksi dengan pasien.",
+  "pklHeading": "🌟 Motto Hidup Saya",
+  "pklDescription": "Sebagai mahasiswa Sarjana Terapan Kesehatan Gigi Poltekkes Kemenkes Semarang, saya berkomitmen untuk memberikan yang terbaik dalam bidang kesehatan gigi masyarakat.",
+  "pklQuote": "\"Edukasi Kreatif, Gigi Sehat, Generasi Hebat.\""
 }

@@ -1,82 +1,49 @@
 {
-  "pageTitle": "Kesehatan Gigi dan Mulut",
-  "pageSubtitle": "Panduan lengkap untuk menjaga kesehatan gigi dan mulut Anda",
-  "introSection": {
-    "paragraph1": "Kesehatan gigi dan mulut adalah bagian dari kesehatan tubuh yang saling berkaitan. Menurut WHO, 60–90% anak sekolah mengalami karies gigi, dan banyak di antaranya bisa dicegah dengan kebiasaan sederhana.",
-    "paragraph2": "Di Kota Semarang, kegiatan \"Gerakan Senyum Sehat Sekolah\" sudah mulai dilaksanakan untuk meningkatkan kesadaran anak tentang kesehatan mulut."
-  },
+  "pageTitle": "🦷 Halaman Edukasi Kesehatan Gigi & Mulut",
+  "pageSubtitle": "Tips wajib untuk menjaga kesehatan gigi dan mulut anak dan remaja",
   "tipsSection": {
-    "title": "Tips Menjaga Kesehatan Gigi",
+    "title": "Tips Wajib untuk Anak & Remaja",
+    "description": "Berikut adalah panduan praktis yang harus diikuti untuk menjaga kesehatan gigi dan mulut anak dan remaja di era digital:",
     "tips": [
       {
-        "title": "Sikat Gigi Dua Kali Sehari",
-        "description": "Sikat gigi dua kali sehari dengan pasta gigi berfluor. Gunakan sikat gigi berbulu lembut dan ganti setiap 3 bulan sekali."
+        "text": "Sikat gigi 2× sehari",
+        "detail": "Menyikat gigi dua kali sehari setelah sarapan dan sebelum tidur untuk menghilangkan plak dan mencegah karies."
       },
       {
-        "title": "Kurangi Makanan Manis dan Lengket",
-        "description": "Batasi konsumsi makanan dan minuman manis yang dapat menyebabkan karies gigi. Perbanyak konsumsi buah dan sayuran segar."
+        "text": "Kurangi makanan/minuman manis",
+        "detail": "Membatasi konsumsi gula dan makanan manis untuk mengurangi risiko gigi berlubang."
       },
       {
-        "title": "Periksa Gigi Setiap Enam Bulan",
-        "description": "Periksa gigi setiap enam bulan sekali di Puskesmas atau klinik gigi untuk deteksi dini masalah kesehatan gigi."
+        "text": "Gunakan pasta gigi berfluor",
+        "detail": "Menggunakan pasta gigi yang mengandung fluorida untuk memperkuat enamel gigi."
       },
       {
-        "title": "Gunakan Benang Gigi",
-        "description": "Gunakan benang gigi atau kumur dengan antiseptik untuk membersihkan sela-sela gigi yang sulit dijangkau sikat gigi biasa."
+        "text": "Periksa gigi tiap 6 bulan",
+        "detail": "Melakukan pemeriksaan rutin ke dokter gigi setiap 6 bulan untuk deteksi dini masalah kesehatan gigi."
       },
       {
-        "title": "Edukasi Sejak Dini",
-        "description": "Ajak anak mengenal pentingnya gigi sejak dini. Biasakan anak menyikat gigi dengan cara yang benar dan menyenangkan."
+        "text": "Batasi screen time ke <2 jam untuk anak",
+        "detail": "Membatasi waktu penggunaan gadget kurang dari 2 jam untuk mengurangi risiko 'mindless eating' dan menjaga kebiasaan menyikat gigi."
       }
     ]
   },
-  "preventionSection": {
-    "title": "Pencegahan dan Perlindungan",
-    "categories": [
+  "imagesSection": {
+    "title": "📸 Gambar Edukasi",
+    "description": "Visualisasi untuk membantu pemahaman tentang kesehatan gigi dan mulut:",
+    "images": [
       {
-        "title": "Kebiasaan Makan",
-        "items": [
-          "Batasi makanan dan minuman manis",
-          "Konsumsi makanan kaya kalsium",
-          "Minum air putih yang cukup",
-          "Hindari minuman bersoda"
-        ]
+        "id": "image4",
+        "src": "/images/uploads/image1.jpg",
+        "alt": "Poster 6 langkah sikat gigi yang benar",
+        "title": "Poster 6 langkah sikat gigi",
+        "caption": "Panduan visual 6 langkah menyikat gigi yang benar untuk edukasi anak dan remaja."
       },
       {
-        "title": "Gaya Hidup Sehat",
-        "items": [
-          "Hindari merokok",
-          "Gunakan pelindung mulut saat olahraga",
-          "Kelola stres dengan baik",
-          "Istirahat yang cukup"
-        ]
-      }
-    ]
-  },
-  "programSection": {
-    "title": "Program Kesehatan Gigi di Semarang",
-    "description": "Puskesmas di Kota Semarang aktif melaksanakan berbagai program kesehatan gigi, termasuk Program Cek Kesehatan Gratis (CKG) 2025 yang mendukung deteksi dini masalah kesehatan gigi pada masyarakat.",
-    "programs": [
-      "Pemeriksaan gigi gratis untuk anak sekolah dan masyarakat umum",
-      "Edukasi kesehatan gigi di sekolah-sekolah (UKGS)",
-      "Penyuluhan di posyandu dan pesantren",
-      "Integrasi data dengan sistem SATUSEHAT"
-    ],
-    "motto": "Mulut Sehat, Senyum Hebat, Indonesia Kuat",
-    "callToAction": "Mari bersama-sama menjaga kesehatan gigi dan mulut untuk Indonesia yang lebih sehat!"
-  },
-  "resourcesSection": {
-    "title": "Informasi Lebih Lanjut",
-    "resources": [
-      {
-        "title": "Program CKG Nasional 2025",
-        "description": "Kementerian Kesehatan RI",
-        "url": "https://www.kemkes.go.id/id/untuk-investasi-masa-depan-bangsa-cek-kesehatan-gratis-anak-sekolah-dimulai"
-      },
-      {
-        "title": "Layanan Puskesmas Kota Semarang",
-        "description": "Pemerintah Kota Semarang",
-        "url": "https://devjelita.semarangkota.go.id/home/detail/29423073"
+        "id": "image5",
+        "src": "/images/uploads/image2.png",
+        "alt": "Demonstrasi penggunaan phantom untuk edukasi kesehatan gigi",
+        "title": "Foto demo phantom",
+        "caption": "Demonstrasi edukasi kesehatan gigi menggunakan model phantom gigi."
       }
     ]
   }

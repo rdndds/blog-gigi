@@ -32,7 +32,7 @@
     "message": "Halo Erdinta Ovielia, saya tertarik dengan program edukasi 3D kesehatan gigi..."
   },
   "translateWidget": {
-    "enabled": true,
+    "enabled": false,
     "defaultLanguage": "id",
     "languages": ["id", "en"],
     "showLanguageSelector": true

@@ -36,31 +36,31 @@ export default function Footer() {
                  >
                    Beranda
                  </Link>
-                 <Link
-                   href="/about"
-                   className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
-                 >
-                   Tentang Saya
-                 </Link>
-                 <Link
-                   href="/edukasi"
-                   className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
-                 >
-                   Edukasi
-                 </Link>
-                 <Link
-                   href="/program-3d"
-                   className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
-                 >
-                   Program 3D
-                 </Link>
-                 <Link
-                   href="/articles"
-                   className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
-                 >
-                   Kontak
-                 </Link>
-               </div>
+                  <Link
+                    href="/about"
+                    className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
+                  >
+                    Tentang Saya
+                  </Link>
+                  <Link
+                    href="/dental-health"
+                    className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
+                  >
+                    Kesehatan Gigi
+                  </Link>
+                   <Link
+                     href="/hobbies"
+                     className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
+                   >
+                     Hobi
+                   </Link>
+                   <Link
+                     href="/articles"
+                     className="text-sm text-gray-700 hover:text-primary-700 font-medium transition-all border-2 border-gray-200 hover:border-primary-500 rounded-lg px-3 py-2 text-center hover:bg-primary-50 hover:shadow-md"
+                   >
+                     Artikel
+                   </Link>
+                </div>
             </CardContent>
           </Card>
 
