@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: '#ffffff',
+  colorScheme: 'light' as const,
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -22,7 +27,7 @@ export default function RootLayout({
   const widgetsData = getWidgetsData();
 
   return (
-    <html lang="id" data-scroll-behavior="smooth">
+    <html lang="id" data-scroll-behavior="smooth" className="light">
       <body className="min-h-screen bg-gray-50 font-sans antialiased">
         <Header />
         <main className="min-h-screen">

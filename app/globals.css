@@ -3,9 +3,123 @@
 @tailwind utilities;
 
 :root {
+  /* Typography */
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Poppins', sans-serif;
+
+  /* Primary Color Palette */
+  --color-primary-50: #fff7f2;
+  --color-primary-100: #ffece1;
+  --color-primary-200: #ffd6b8;
+  --color-primary-300: #ffb885;
+  --color-primary-400: #ff9061;
+  --color-primary-500: #ff7043;
+  --color-primary-600: #f45d36;
+  --color-primary-700: #d84315;
+  --color-primary-800: #bf360c;
+  --color-primary-900: #8d2e0e;
+
+  /* Secondary Color Palette */
+  --color-secondary-50: #f0fdfa;
+  --color-secondary-100: #ccfbf1;
+  --color-secondary-200: #99f6e4;
+  --color-secondary-300: #5eead4;
+  --color-secondary-400: #2dd4bf;
+  --color-secondary-500: #14b8a6;
+  --color-secondary-600: #0d9488;
+  --color-secondary-700: #0f766e;
+  --color-secondary-800: #115e59;
+  --color-secondary-900: #134e4a;
+
+  /* Accent Color Palette */
+  --color-accent-50: #fdf4ff;
+  --color-accent-100: #fae8ff;
+  --color-accent-200: #f5d0fe;
+  --color-accent-300: #f0abfc;
+  --color-accent-400: #e879f9;
+  --color-accent-500: #d946ef;
+  --color-accent-600: #c026d3;
+  --color-accent-700: #a21caf;
+  --color-accent-800: #86198f;
+  --color-accent-900: #701a75;
+
+  /* Neutral Color Palette */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+  --spacing-5xl: 8rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Animation Durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 1000ms;
+
+  /* Animation Easing */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-Index Scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+
+  /* Component Specific */
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(255, 255, 255, 0.2);
+  --widget-bg: rgba(255, 255, 255, 0.95);
+  --widget-border: rgba(0, 0, 0, 0.08);
+  --sidebar-bg: rgba(255, 255, 255, 0.98);
+  --hero-overlay: rgba(0, 0, 0, 0.3);
 }
+
+/* Light theme only - dark mode removed */
 
 @layer base {
   * {
@@ -24,20 +138,277 @@
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-heading font-bold tracking-tight;
   }
-  
+
   h2 {
     @apply text-3xl md:text-4xl font-heading font-semibold tracking-tight;
   }
-  
+
   h3 {
     @apply text-2xl md:text-3xl font-heading font-semibold;
   }
-  
+
   h4 {
     @apply text-xl md:text-2xl font-heading font-medium;
   }
-  
+
   p {
     @apply text-base md:text-lg leading-relaxed text-gray-700;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Effects */
+  .glass-morphism {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .glass-morphism-sm {
+    background: var(--widget-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--widget-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Card Variants */
+  .card-primary {
+    background: linear-gradient(135deg, var(--color-primary-50), var(--color-primary-100));
+    border: 1px solid var(--color-primary-200);
+    box-shadow: 0 8px 24px rgba(255, 112, 67, 0.15);
+  }
+
+  .card-secondary {
+    background: linear-gradient(135deg, var(--color-secondary-50), var(--color-secondary-100));
+    border: 1px solid var(--color-secondary-200);
+    box-shadow: 0 8px 24px rgba(20, 184, 166, 0.15);
+  }
+
+  .card-neutral {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-600));
+    color: white;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    font-weight: 600;
+    transition: all var(--duration-normal) var(--ease-out);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-primary-600);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    font-weight: 600;
+    border: 2px solid var(--color-primary-500);
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-primary-50);
+    border-color: var(--color-primary-600);
+  }
+
+  /* Widget Base Styles */
+  .widget-base {
+    background: var(--widget-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--widget-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .widget-base:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  /* Badge Variants */
+  .badge-primary {
+    background: var(--color-primary-100);
+    color: var(--color-primary-700);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .badge-secondary {
+    background: var(--color-secondary-100);
+    color: var(--color-secondary-700);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-secondary-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-white {
+    background: linear-gradient(135deg, #ffffff, var(--color-secondary-200));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Loading States */
+  .skeleton {
+    background: linear-gradient(90deg, var(--color-neutral-200) 25%, var(--color-neutral-100) 50%, var(--color-neutral-200) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .hover-glow {
+    transition: all var(--duration-normal) var(--ease-out);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(255, 112, 67, 0.3);
+  }
+
+  /* Focus States */
+  .focus-ring {
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+
+  .focus-ring:focus {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-md);
+  }
+
+  /* Responsive Typography */
+  .responsive-text-xs {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .responsive-text-sm {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+
+  .responsive-text-base {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+  }
+
+  .responsive-text-lg {
+    font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+  }
+
+  .responsive-text-xl {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+
+  /* Animation Classes */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s var(--ease-out);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s var(--ease-out);
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s var(--ease-out);
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Custom Scrollbar Styles */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-neutral-100);
+    border-radius: var(--radius-full);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-primary-300);
+    border-radius: var(--radius-full);
+    transition: background var(--duration-normal) var(--ease-out);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-400);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:active {
+    background: var(--color-primary-500);
   }
 }

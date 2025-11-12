@@ -11,7 +11,24 @@ import { faInstagram, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  // Handle scroll progress and header styling
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(Math.min(progress, 100));
+      setScrolled(scrollTop > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once to set initial state
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -48,8 +65,21 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-primary-100 bg-white">
-      <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
+    <>
+      {/* Scroll Progress Indicator */}
+      <div className="fixed top-0 left-0 w-full h-1 bg-primary-100 z-50">
+        <div
+          className="h-full bg-gradient-to-r from-primary-500 to-secondary-500 transition-all duration-150 ease-out"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
+      <header className={`sticky top-0 z-50 w-full border-b border-primary-100 transition-all duration-200 ${
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-md'
+          : 'bg-white'
+      }`}>
+        <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
           <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg group-hover:scale-110 transition-transform shadow-medium">
@@ -178,5 +208,6 @@ export default function Header() {
         </>
       )}
     </header>
+    </>
   );
 }

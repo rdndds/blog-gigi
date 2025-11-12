@@ -103,26 +103,55 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
 
   return (
     <div ref={wrapperRef} className="relative">
-      <Card className="border-0 shadow-soft bg-white hover:shadow-large transition-shadow">
-        <CardContent className="p-4">
-          <form onSubmit={handleSearch} className="flex gap-2">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-              <Input
-                type="text"
-                placeholder="Cari artikel..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={handleKeyDown}
-                onFocus={() => query.length >= 2 && suggestions.length > 0 && setShowSuggestions(true)}
-                className="pl-10"
-                autoComplete="off"
-              />
+      <Card className="border-0 shadow-card bg-gradient-to-br from-white to-primary-50/30 hover:shadow-card-hover transition-all duration-300 group">
+        <CardContent className="p-6">
+          <div className="space-y-4">
+            {/* Header */}
+            <div className="flex items-center gap-2 text-neutral-700 mb-2">
+              <div className="p-1.5 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg">
+                <Search className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-sm font-semibold">Pencarian Artikel</span>
             </div>
-            <Button type="submit" size="icon">
-              <Search className="w-4 h-4" />
-            </Button>
-          </form>
+
+            {/* Search Form */}
+            <form onSubmit={handleSearch} className="relative">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400 group-focus-within:text-primary-500 transition-colors" />
+                <Input
+                  type="text"
+                  placeholder="Cari artikel kesehatan gigi..."
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  onFocus={() => query.length >= 2 && suggestions.length > 0 && setShowSuggestions(true)}
+                  className="pl-12 pr-12 h-12 bg-white/80 backdrop-blur-sm border-neutral-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200"
+                  autoComplete="off"
+                />
+                <Button
+                  type="submit"
+                  size="icon"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-primary-500 hover:bg-primary-600 transition-colors"
+                >
+                  <Search className="w-4 h-4 text-white" />
+                </Button>
+              </div>
+            </form>
+
+            {/* Quick Tags */}
+            <div className="flex flex-wrap gap-2">
+              <span className="text-xs text-neutral-500">Populer:</span>
+              {['karies', 'edukasi', '3D', 'anak'].map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => setQuery(tag)}
+                  className="px-2 py-1 bg-neutral-100 hover:bg-primary-100 text-neutral-600 hover:text-primary-700 text-xs rounded-full transition-colors"
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
         </CardContent>
       </Card>
 

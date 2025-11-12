@@ -1,35 +1,60 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link2, ExternalLink } from 'lucide-react';
-import { getWidgetsData } from '@/lib/content';
+
+// Mock data to avoid server-side imports
+const mockData = {
+  usefulLinks: [
+    {
+      name: "Kemenkes RI",
+      url: "https://www.kemkes.go.id/"
+    },
+    {
+      name: "PDGI",
+      url: "https://www.pdgi.or.id/"
+    },
+    {
+      name: "WHO Oral Health",
+      url: "https://www.who.int/health-topics/oral-health"
+    },
+    {
+      name: "Poltekkes Semarang",
+      url: "https://poltekkes-smg.ac.id/"
+    }
+  ]
+};
 
 export default function BlogRoll() {
-  const data = getWidgetsData();
+  const data = mockData;
   
   return (
-    <Card className="border-0 shadow-soft bg-white hover:shadow-large transition-shadow">
-      <CardHeader className="pb-3">
-        <CardTitle className="text-sm font-medium flex items-center gap-2">
-          <Link2 className="w-4 h-4 text-primary-600" />
-          Link Berguna
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <ul className="space-y-2">
+    <div className="widget-base">
+      <div className="space-y-4">
+        {/* Header */}
+        <div className="flex items-center gap-2 text-neutral-700 mb-2">
+          <div className="p-1.5 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg">
+            <Link2 className="w-4 h-4 text-white" />
+          </div>
+          <span className="text-sm font-semibold">Link Berguna</span>
+        </div>
+
+        {/* Links List */}
+        <div className="space-y-2">
           {data.usefulLinks.map((link: { name: string; url: string }) => (
-            <li key={link.name}>
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between text-sm text-gray-700 hover:text-primary-700 font-medium transition-colors"
-              >
-                <span>{link.name}</span>
-                <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-            </li>
+            <a
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between p-3 bg-white/60 rounded-lg border border-neutral-100 hover:bg-white hover:border-accent-200 hover:shadow-sm transition-all duration-200"
+            >
+              <span className="text-sm text-gray-700 group-hover:text-accent-700 font-medium">
+                {link.name}
+              </span>
+              <ExternalLink className="w-4 h-4 text-neutral-400 group-hover:text-accent-600 group-hover:translate-x-0.5 transition-all" />
+            </a>
           ))}
-        </ul>
-      </CardContent>
-    </Card>
+        </div>
+      </div>
+    </div>
   );
 }
