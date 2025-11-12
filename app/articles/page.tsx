@@ -1,22 +1,27 @@
-import { getArticles } from '@/lib/markdown';
-import ArticleCard from '@/components/article/article-card';
-import Link from 'next/link';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import SearchWidget from '@/components/widgets/search-widget';
+import { getArticles } from "@/lib/markdown";
+import ArticleCard from "@/components/article/article-card";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import SearchWidget from "@/components/widgets/search-widget";
 
 const ARTICLES_PER_PAGE = 6;
 
 export default async function ArticlesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ search?: string; tag?: string; page?: string; date?: string }>;
+  searchParams: Promise<{
+    search?: string;
+    tag?: string;
+    page?: string;
+    date?: string;
+  }>;
 }) {
   const params = await searchParams;
   const allArticles = await getArticles();
-  
+
   // Filter articles based on search and tag
   let filteredArticles = allArticles;
-  
+
   if (params.search) {
     const searchLower = params.search.toLowerCase();
     filteredArticles = filteredArticles.filter(
@@ -24,14 +29,14 @@ export default async function ArticlesPage({
         article.title.toLowerCase().includes(searchLower) ||
         article.excerpt.toLowerCase().includes(searchLower) ||
         article.content.toLowerCase().includes(searchLower) ||
-        article.tags.some((tag) => tag.toLowerCase().includes(searchLower))
+        article.tags.some((tag) => tag.toLowerCase().includes(searchLower)),
     );
   }
-  
+
   if (params.tag) {
     const tagLower = params.tag.toLowerCase();
     filteredArticles = filteredArticles.filter((article) =>
-      article.tags.some((tag) => tag.toLowerCase() === tagLower)
+      article.tags.some((tag) => tag.toLowerCase() === tagLower),
     );
   }
 
@@ -48,7 +53,7 @@ export default async function ArticlesPage({
   }
 
   // Pagination
-  const currentPage = parseInt(params.page || '1', 10);
+  const currentPage = parseInt(params.page || "1", 10);
   const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
   const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
   const endIndex = startIndex + ARTICLES_PER_PAGE;
@@ -57,12 +62,12 @@ export default async function ArticlesPage({
   // Generate pagination URL
   const getPaginationUrl = (page: number) => {
     const searchParamsObj = new URLSearchParams();
-    if (params.search) searchParamsObj.set('search', params.search);
-    if (params.tag) searchParamsObj.set('tag', params.tag);
-    if (params.date) searchParamsObj.set('date', params.date);
-    if (page > 1) searchParamsObj.set('page', page.toString());
+    if (params.search) searchParamsObj.set("search", params.search);
+    if (params.tag) searchParamsObj.set("tag", params.tag);
+    if (params.date) searchParamsObj.set("date", params.date);
+    if (page > 1) searchParamsObj.set("page", page.toString());
     const queryString = searchParamsObj.toString();
-    return `/articles${queryString ? `?${queryString}` : ''}`;
+    return `/articles${queryString ? `?${queryString}` : ""}`;
   };
 
   return (
@@ -81,23 +86,32 @@ export default async function ArticlesPage({
           <div className="max-w-2xl mx-auto mb-6">
             <SearchWidget />
           </div>
-          
+
           {/* Search/Filter Info */}
           {(params.search || params.tag || params.date) && (
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
               {params.search && (
                 <span className="text-sm text-gray-600">
-                  Pencarian: <strong className="text-primary-600">{params.search}</strong>
+                  Pencarian:{" "}
+                  <strong className="text-primary-600">{params.search}</strong>
                 </span>
               )}
               {params.tag && (
                 <span className="text-sm text-gray-600">
-                  Tag: <strong className="text-primary-600">{params.tag}</strong>
+                  Tag:{" "}
+                  <strong className="text-primary-600">{params.tag}</strong>
                 </span>
               )}
               {params.date && (
                 <span className="text-sm text-gray-600">
-                  Tanggal: <strong className="text-primary-600">{new Date(params.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</strong>
+                  Tanggal:{" "}
+                  <strong className="text-primary-600">
+                    {new Date(params.date).toLocaleDateString("id-ID", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </strong>
                 </span>
               )}
               <a
@@ -114,8 +128,10 @@ export default async function ArticlesPage({
         {paginatedArticles.length > 0 ? (
           <>
             <p className="text-gray-600 mb-6">
-              Menampilkan {startIndex + 1}-{Math.min(endIndex, filteredArticles.length)} dari {filteredArticles.length} artikel
-              {params.search || params.tag ? ' yang sesuai' : ''}
+              Menampilkan {startIndex + 1}-
+              {Math.min(endIndex, filteredArticles.length)} dari{" "}
+              {filteredArticles.length} artikel
+              {params.search || params.tag ? " yang sesuai" : ""}
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {paginatedArticles.map((article) => (
@@ -147,38 +163,40 @@ export default async function ArticlesPage({
 
                 {/* Page Numbers */}
                 <div className="flex items-center gap-1">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
-                    // Show first page, last page, current page, and pages around current
-                    if (
-                      page === 1 ||
-                      page === totalPages ||
-                      (page >= currentPage - 1 && page <= currentPage + 1)
-                    ) {
-                      return (
-                        <Link
-                          key={page}
-                          href={getPaginationUrl(page)}
-                          className={`w-10 h-10 flex items-center justify-center rounded-lg transition-colors ${
-                            page === currentPage
-                              ? 'bg-primary-600 text-white font-semibold'
-                              : 'border border-gray-300 bg-white hover:bg-gray-50'
-                          }`}
-                        >
-                          {page}
-                        </Link>
-                      );
-                    } else if (
-                      page === currentPage - 2 ||
-                      page === currentPage + 2
-                    ) {
-                      return (
-                        <span key={page} className="px-2 text-gray-400">
-                          ...
-                        </span>
-                      );
-                    }
-                    return null;
-                  })}
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                    (page) => {
+                      // Show first page, last page, current page, and pages around current
+                      if (
+                        page === 1 ||
+                        page === totalPages ||
+                        (page >= currentPage - 1 && page <= currentPage + 1)
+                      ) {
+                        return (
+                          <Link
+                            key={page}
+                            href={getPaginationUrl(page)}
+                            className={`w-10 h-10 flex items-center justify-center rounded-lg transition-colors ${
+                              page === currentPage
+                                ? "bg-primary-600 text-white font-semibold"
+                                : "border border-gray-300 bg-white hover:bg-gray-50"
+                            }`}
+                          >
+                            {page}
+                          </Link>
+                        );
+                      } else if (
+                        page === currentPage - 2 ||
+                        page === currentPage + 2
+                      ) {
+                        return (
+                          <span key={page} className="px-2 text-gray-400">
+                            ...
+                          </span>
+                        );
+                      }
+                      return null;
+                    },
+                  )}
                 </div>
 
                 {/* Next Button */}
@@ -206,8 +224,8 @@ export default async function ArticlesPage({
           <div className="text-center py-12 bg-white rounded-lg shadow-soft">
             <p className="text-gray-500 text-lg mb-2">
               {params.search || params.tag || params.date
-                ? 'Tidak ada artikel yang sesuai dengan pencarian Anda.'
-                : 'Belum ada artikel tersedia. Periksa kembali nanti untuk konten menarik!'}
+                ? "Tidak ada artikel yang sesuai dengan pencarian Anda."
+                : "Belum ada artikel tersedia. Periksa kembali nanti untuk konten menarik!"}
             </p>
             {(params.search || params.tag || params.date) && (
               <a

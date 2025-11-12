@@ -1,7 +1,7 @@
 **🌐 BLOG RESMI Senyum Cerdas 2025**
 
 **“Kesehatan Gigi untuk Generasi Emas Indonesia”**  
-(Blog Edukasi Kesehatan Gigi & Inovasi Digital Kesehatan Gigi dan Mulut *oleh Erdinta Ovielia – Semarang, 2025*)
+(Blog Edukasi Kesehatan Gigi & Inovasi Digital Kesehatan Gigi dan Mulut _oleh Erdinta Ovielia – Semarang, 2025_)
 
 **🏠 HALAMAN UTAMA (ARTIKEL DINAMIS)**
 
@@ -14,13 +14,13 @@
 Di era digital 2025, kebiasaan anak Indonesia berubah drastis. Durasi screen time meningkat, konsumsi makanan manis naik karena layanan pesan cepat (“instant sweet delivery”), dan frekuensi menyikat gigi tidak seimbang dengan pola makan baru.  
 Hasil survei nasional (Riskesdas 2023–2024) menunjukkan:
 
-* **73% anak usia sekolah mengalami karies aktif**  
-* **29% anak menyikat gigi hanya sekali sehari**  
-* **Hanya 8% yang menyikat gigi pada waktu “golden time”** (pagi setelah sarapan & malam sebelum tidur)
+- **73% anak usia sekolah mengalami karies aktif**
+- **29% anak menyikat gigi hanya sekali sehari**
+- **Hanya 8% yang menyikat gigi pada waktu “golden time”** (pagi setelah sarapan & malam sebelum tidur)
 
 Fenomena ini disebut para ahli sebagai **“Digital Age Dental Crisis”**, yaitu kondisi di mana gaya hidup digital mempercepat kerusakan gigi anak.
 
-Sebagai mahasiswa kesehatan gigi, saya – **Erdinta Ovielia Putri** –  melakukan skrining gigi di sekolah, posyandu, dan komunitas, serta mengembangkan **media edukasi interaktif berbasis 3D dan video animasi** untuk meningkatkan minat anak mempelajari kebersihan gigi.
+Sebagai mahasiswa kesehatan gigi, saya – **Erdinta Ovielia Putri** – melakukan skrining gigi di sekolah, posyandu, dan komunitas, serta mengembangkan **media edukasi interaktif berbasis 3D dan video animasi** untuk meningkatkan minat anak mempelajari kebersihan gigi.
 
 **Fokus Utama Artikel**
 
@@ -29,9 +29,9 @@ Sebagai mahasiswa kesehatan gigi, saya – **Erdinta Ovielia Putri** –  melaku
 ✅ Solusi berbasis edukasi audiovisual & 3D  
 ✅ Peran orang tua sebagai “digital dental guardian”
 
-📸Gambar yang di sarankan: 
+📸Gambar yang di sarankan:
 
-1. Kegiatan penyuluhan menggunakan media  audivisual di posyandu lansia ![][image1]
+1. Kegiatan penyuluhan menggunakan media audivisual di posyandu lansia ![][image1]
 
 **🦷 \*\*Artikel 2: Isu Menarik 2025**
 
@@ -41,9 +41,9 @@ Mulai 2025, pemerintah mulai mendorong kampanye **“Zero Sugar Drink at School�
 
 Kampanye ini diusulkan karena:
 
-* Minuman gula kemasan menyumbang **40–60% konsumsi gula harian anak Indonesia**  
-* Karies meningkat **12% dalam 5 tahun terakhir**  
-* Edukasi gigi konvensional **tidak cukup efektif tanpa pendekatan lingkungan sekolah**
+- Minuman gula kemasan menyumbang **40–60% konsumsi gula harian anak Indonesia**
+- Karies meningkat **12% dalam 5 tahun terakhir**
+- Edukasi gigi konvensional **tidak cukup efektif tanpa pendekatan lingkungan sekolah**
 
 Program ini melibatkan sekolah, UKGS, guru, dan orang tua.
 
@@ -69,10 +69,10 @@ Program ini melibatkan sekolah, UKGS, guru, dan orang tua.
 Indonesia kini memasuki era **HealthTech Education**, termasuk dalam bidang kesehatan gigi.  
 Tenaga kesehatan mulai menggunakan:
 
-* **Phantom berbahan resin 3D**  
-* **Model gigi digital dalam AR**  
-* **Video animasi interaktif untuk anak**  
-* **Simulasi menyikat gigi berbasis sensor**
+- **Phantom berbahan resin 3D**
+- **Model gigi digital dalam AR**
+- **Video animasi interaktif untuk anak**
+- **Simulasi menyikat gigi berbasis sensor**
 
 Saya sendiri mengembangkan:  
 ✅ **Model 3D “Gigi Berlubang Realistis untuk Anak”**  

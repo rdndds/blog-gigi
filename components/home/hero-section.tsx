@@ -1,18 +1,19 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Sparkles, ArrowRight, Play } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Sparkles, ArrowRight, Play } from "lucide-react";
 
 // Mock hero data to avoid server-side imports
 const mockHeroData = {
   badgeText: "Inovasi Kesehatan Digital",
   heading: "Senyum Cerdas",
   highlightText: 2025,
-  description: "Platform edukasi kesehatan gigi digital generasi emas Indonesia dengan teknologi 3D dan AI untuk pembelajaran interaktif.",
+  description:
+    "Platform edukasi kesehatan gigi digital generasi emas Indonesia dengan teknologi 3D dan AI untuk pembelajaran interaktif.",
   primaryButtonText: "Mulai Belajar",
   primaryButtonLink: "/articles",
   secondaryButtonText: "Tonton Demo",
-  secondaryButtonLink: "#demo"
+  secondaryButtonLink: "#demo",
 };
 
 export default function HeroSection() {
@@ -79,20 +80,24 @@ export default function HeroSection() {
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary-300/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+        <div
+          className="absolute bottom-20 right-20 w-96 h-96 bg-secondary-300/20 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "1s" }}
+        />
         <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-white/5 rounded-full blur-2xl animate-pulse-slow" />
       </div>
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
           {/* Left Column - Content */}
           <div className="text-white space-y-8 animate-fade-in-up">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 hover:bg-white/30 transition-all duration-300 cursor-default">
               <Sparkles className="w-4 h-4 text-white animate-pulse" />
-              <span className="text-sm font-medium text-white">{data.badgeText}</span>
+              <span className="text-sm font-medium text-white">
+                {data.badgeText}
+              </span>
             </div>
 
             {/* Main Heading */}
@@ -145,7 +150,10 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column - Visual Element */}
-          <div className="relative animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <div
+            className="relative animate-slide-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             <div className="relative">
               {/* Main Image/Visual Placeholder */}
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
@@ -155,7 +163,9 @@ export default function HeroSection() {
                       <Sparkles className="w-12 h-12 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold">Senyum Cerdas 2025</h3>
-                    <p className="text-white/70">Inovasi Edukasi Kesehatan Gigi Digital</p>
+                    <p className="text-white/70">
+                      Inovasi Edukasi Kesehatan Gigi Digital
+                    </p>
                   </div>
                 </div>
               </div>
@@ -164,7 +174,10 @@ export default function HeroSection() {
               <div className="absolute -top-4 -right-4 bg-secondary-500 text-white rounded-lg p-3 shadow-lg animate-float">
                 <span className="text-sm font-semibold">3D & AI</span>
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-white text-primary-600 rounded-lg p-3 shadow-lg animate-float" style={{ animationDelay: '0.5s' }}>
+              <div
+                className="absolute -bottom-4 -left-4 bg-white text-primary-600 rounded-lg p-3 shadow-lg animate-float"
+                style={{ animationDelay: "0.5s" }}
+              >
                 <span className="text-sm font-semibold">Edukasi</span>
               </div>
             </div>

@@ -1,7 +1,9 @@
 ## Why
+
 The previous implementation went beyond the scope of `opi.md` by creating unnecessary new pages (edukasi, program-3d) and navigation items that weren't specified in the original markdown document. This proposal reverts the over-engineered changes and implements only what's actually specified in `opi.md`, using the exact content provided rather than generating new content.
 
 ## What Changes
+
 - **Revert navigation structure**: Remove unnecessary new pages from navigation, keep existing structure with updated names
 - **Update existing content only**: Replace article and about page content with exact content from `opi.md`
 - **Remove over-engineered pages**: Delete the unnecessarily created `/edukasi` and `/program-3d` pages
@@ -9,6 +11,7 @@ The previous implementation went beyond the scope of `opi.md` by creating unnece
 - **Minimal implementation**: Focus only on content updates that are explicitly specified in `opi.md`
 
 ## Impact
+
 - **Affected specs**: content-management
 - **Affected code**:
   - Revert navigation in `components/layout/header.tsx` to remove unnecessary items

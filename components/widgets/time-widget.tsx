@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Clock, Calendar, Sun, Moon } from 'lucide-react';
-import { format } from 'date-fns';
-import { id } from 'date-fns/locale';
+import { useState, useEffect } from "react";
+import { Clock, Calendar, Sun, Moon } from "lucide-react";
+import { format } from "date-fns";
+import { id } from "date-fns/locale";
 
 export default function TimeWidget() {
   const [time, setTime] = useState<Date | null>(null);
@@ -18,7 +18,9 @@ export default function TimeWidget() {
     return () => clearInterval(timer);
   }, []);
 
-  const isNightTime = time ? time.getHours() >= 18 || time.getHours() < 6 : false;
+  const isNightTime = time
+    ? time.getHours() >= 18 || time.getHours() < 6
+    : false;
   const isDayTime = time ? time.getHours() >= 6 && time.getHours() < 18 : false;
 
   // Loading state
@@ -71,7 +73,9 @@ export default function TimeWidget() {
             <div className="p-1.5 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-lg">
               <Clock className="w-4 h-4 text-white" />
             </div>
-            <span className="text-sm font-semibold text-neutral-800">Waktu Digital</span>
+            <span className="text-sm font-semibold text-neutral-800">
+              Waktu Digital
+            </span>
           </div>
           <div className="flex items-center gap-1">
             {isDayTime ? (
@@ -93,11 +97,11 @@ export default function TimeWidget() {
                   key={hour}
                   className="absolute text-xs font-semibold text-secondary-600"
                   style={{
-                    top: hour === 12 ? '8px' : hour === 6 ? 'auto' : '50%',
-                    bottom: hour === 6 ? '8px' : 'auto',
-                    left: hour === 9 ? '8px' : hour === 3 ? 'auto' : '50%',
-                    right: hour === 3 ? '8px' : 'auto',
-                    transform: `translate(${hour === 9 || hour === 3 ? '0' : '-50%'}, ${hour === 12 || hour === 6 ? '0' : '-50%'})`
+                    top: hour === 12 ? "8px" : hour === 6 ? "auto" : "50%",
+                    bottom: hour === 6 ? "8px" : "auto",
+                    left: hour === 9 ? "8px" : hour === 3 ? "auto" : "50%",
+                    right: hour === 3 ? "8px" : "auto",
+                    transform: `translate(${hour === 9 || hour === 3 ? "0" : "-50%"}, ${hour === 12 || hour === 6 ? "0" : "-50%"})`,
                   }}
                 >
                   {hour}
@@ -112,7 +116,7 @@ export default function TimeWidget() {
                 className="absolute w-1 h-8 bg-secondary-700 rounded-full origin-bottom"
                 style={{
                   transform: `rotate(${hourAngle}deg) translateY(-16px)`,
-                  transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                  transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                 }}
               />
 
@@ -121,7 +125,7 @@ export default function TimeWidget() {
                 className="absolute w-0.5 h-12 bg-secondary-600 rounded-full origin-bottom"
                 style={{
                   transform: `rotate(${minuteAngle}deg) translateY(-24px)`,
-                  transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                  transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                 }}
               />
 
@@ -130,7 +134,7 @@ export default function TimeWidget() {
                 className="absolute w-0.5 h-14 bg-red-500 rounded-full origin-bottom"
                 style={{
                   transform: `rotate(${secondAngle}deg) translateY(-28px)`,
-                  transition: 'transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)'
+                  transition: "transform 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
                 }}
               />
 
@@ -143,28 +147,30 @@ export default function TimeWidget() {
         {/* Digital Time */}
         <div className="text-center space-y-2">
           <div className="text-3xl font-bold text-secondary-700 font-mono tracking-wider tabular-nums">
-            {format(time, 'HH:mm:ss')}
+            {format(time, "HH:mm:ss")}
           </div>
 
           {/* Date */}
           <div className="flex items-center justify-center gap-2 text-xs text-neutral-600">
             <Calendar className="w-3 h-3" />
             <span className="font-medium">
-              {format(time, 'EEEE, d MMMM yyyy', { locale: id })}
+              {format(time, "EEEE, d MMMM yyyy", { locale: id })}
             </span>
           </div>
 
           {/* Time period indicator */}
           <div className="flex justify-center gap-2 mt-3">
-            <div className={`px-3 py-1 rounded-full text-xs font-medium ${
-              isDayTime
-                ? 'bg-yellow-100 text-yellow-700'
-                : 'bg-indigo-100 text-indigo-700'
-            }`}>
-              {isDayTime ? '🌞 Siang Hari' : '🌙 Malam Hari'}
+            <div
+              className={`px-3 py-1 rounded-full text-xs font-medium ${
+                isDayTime
+                  ? "bg-yellow-100 text-yellow-700"
+                  : "bg-indigo-100 text-indigo-700"
+              }`}
+            >
+              {isDayTime ? "🌞 Siang Hari" : "🌙 Malam Hari"}
             </div>
             <div className="px-3 py-1 bg-secondary-100 text-secondary-700 rounded-full text-xs font-medium">
-              {format(time, 'zzz')}
+              {format(time, "zzz")}
             </div>
           </div>
         </div>

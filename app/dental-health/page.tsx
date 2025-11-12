@@ -1,8 +1,8 @@
-import { CheckCircle, Image as ImageIcon } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import OptimizedImage from '@/components/dental/optimized-image';
-import fs from 'fs';
-import path from 'path';
+import { CheckCircle, Image as ImageIcon } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import LightboxGallery from "@/components/article/lightbox-gallery";
+import fs from "fs";
+import path from "path";
 
 interface DentalHealthData {
   pageTitle: string;
@@ -29,8 +29,8 @@ interface DentalHealthData {
 }
 
 async function getDentalHealthData(): Promise<DentalHealthData> {
-  const filePath = path.join(process.cwd(), 'content/data/dental-health.json');
-  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const filePath = path.join(process.cwd(), "content/data/dental-health.json");
+  const fileContents = fs.readFileSync(filePath, "utf8");
   return JSON.parse(fileContents);
 }
 
@@ -63,7 +63,10 @@ export default async function DentalHealthPage() {
             </p>
             <div className="space-y-6">
               {data.tipsSection.tips.map((tip, index) => (
-                <div key={index} className="flex items-start gap-4 p-4 bg-white rounded-lg border border-primary-100 hover:border-primary-300 transition-colors">
+                <div
+                  key={index}
+                  className="flex items-start gap-4 p-4 bg-white rounded-lg border border-primary-100 hover:border-primary-300 transition-colors"
+                >
                   <div className="flex-shrink-0">
                     <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white font-bold">
                       {index + 1}
@@ -72,9 +75,13 @@ export default async function DentalHealthPage() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
                       <CheckCircle className="w-5 h-5 text-green-600" />
-                      <h3 className="font-semibold text-gray-900 text-lg">{tip.text}</h3>
+                      <h3 className="font-semibold text-gray-900 text-lg">
+                        {tip.text}
+                      </h3>
                     </div>
-                    <p className="text-gray-600 leading-relaxed">{tip.detail}</p>
+                    <p className="text-gray-600 leading-relaxed">
+                      {tip.detail}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -94,15 +101,34 @@ export default async function DentalHealthPage() {
             <p className="text-gray-600 mb-6 text-center">
               {data.imagesSection.description}
             </p>
-            <div className="space-y-8">
+
+            {/* Transform images for LightboxGallery */}
+            <LightboxGallery
+              images={data.imagesSection.images.map((image) => ({
+                image: image.src,
+                title: image.title,
+              }))}
+              columns={
+                data.imagesSection.images.length === 1
+                  ? 1
+                  : data.imagesSection.images.length === 2
+                    ? 2
+                    : 3
+              }
+            />
+
+            {/* Show captions below the gallery */}
+            <div className="mt-6 space-y-4">
               {data.imagesSection.images.map((image, index) => (
-                <OptimizedImage
+                <div
                   key={image.id}
-                  src={image.src}
-                  alt={image.alt}
-                  title={image.title}
-                  caption={image.caption}
-                />
+                  className="text-center p-4 bg-gradient-to-br from-primary-50 to-white rounded-lg border border-primary-100"
+                >
+                  <h4 className="font-semibold text-gray-900 mb-2">
+                    {image.title}
+                  </h4>
+                  <p className="text-sm text-gray-600">{image.caption}</p>
+                </div>
               ))}
             </div>
           </CardContent>

@@ -1,32 +1,32 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronUp, Settings, Grid3x3 } from 'lucide-react';
-import VisitorCounter from '@/components/widgets/visitor-counter';
-import SearchWidgetClient from '@/components/widgets/search-widget-client';
-import TimeWidget from '@/components/widgets/time-widget';
-import CloudTag from '@/components/widgets/cloud-tag';
-import BlogRoll from '@/components/widgets/blog-roll';
-import LatestArticles from '@/components/widgets/latest-articles';
-import MapsWidget from '@/components/widgets/maps-widget';
-import CalendarWidgetWrapper from '@/components/widgets/calendar-widget-wrapper';
+import { useState, useEffect } from "react";
+import { ChevronDown, ChevronUp, Settings, Grid3x3 } from "lucide-react";
+import VisitorCounter from "@/components/widgets/visitor-counter";
+import SearchWidgetClient from "@/components/widgets/search-widget-client";
+import TimeWidget from "@/components/widgets/time-widget";
+import CloudTag from "@/components/widgets/cloud-tag";
+import BlogRoll from "@/components/widgets/blog-roll";
+import LatestArticles from "@/components/widgets/latest-articles";
+import MapsWidget from "@/components/widgets/maps-widget";
+import CalendarWidgetWrapper from "@/components/widgets/calendar-widget-wrapper";
 
 // Mock articles for search widget
 const mockArticles = [
   {
-    slug: 'panduan-kesehatan-gigi',
-    title: 'Panduan Lengkap Kesehatan Gigi Anak',
-    excerpt: 'Tips lengkap menjaga kesehatan gigi anak',
-    date: '2025-01-15',
-    tags: ['edukasi', 'anak']
+    slug: "panduan-kesehatan-gigi",
+    title: "Panduan Lengkap Kesehatan Gigi Anak",
+    excerpt: "Tips lengkap menjaga kesehatan gigi anak",
+    date: "2025-01-15",
+    tags: ["edukasi", "anak"],
   },
   {
-    slug: 'teknologi-3d-kedokteran',
-    title: 'Teknologi 3D dalam Kedokteran Gigi',
-    excerpt: 'Inovasi teknologi 3D untuk kedokteran gigi modern',
-    date: '2025-01-20',
-    tags: ['teknologi', '3D']
-  }
+    slug: "teknologi-3d-kedokteran",
+    title: "Teknologi 3D dalam Kedokteran Gigi",
+    excerpt: "Inovasi teknologi 3D untuk kedokteran gigi modern",
+    date: "2025-01-20",
+    tags: ["teknologi", "3D"],
+  },
 ];
 
 interface WidgetSection {
@@ -35,102 +35,106 @@ interface WidgetSection {
   icon: React.ReactNode;
   component: React.ReactNode;
   defaultExpanded: boolean;
-  priority: 'high' | 'medium' | 'low';
+  priority: "high" | "medium" | "low";
 }
 
 export default function Sidebar() {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(
+    new Set(),
+  );
   const [visibleWidgets, setVisibleWidgets] = useState<Set<string>>(new Set());
 
   // Define widget sections with organization
   const widgetSections: WidgetSection[] = [
     {
-      id: 'search',
-      title: 'Pencarian',
+      id: "search",
+      title: "Pencarian",
       icon: <Grid3x3 className="w-4 h-4" />,
       component: <SearchWidgetClient articles={mockArticles} />,
       defaultExpanded: true,
-      priority: 'high'
+      priority: "high",
     },
     {
-      id: 'visitor-counter',
-      title: 'Statistik',
+      id: "visitor-counter",
+      title: "Statistik",
       icon: <Settings className="w-4 h-4" />,
       component: <VisitorCounter />,
       defaultExpanded: true,
-      priority: 'high'
+      priority: "high",
     },
     {
-      id: 'calendar',
-      title: 'Kalender',
+      id: "calendar",
+      title: "Kalender",
       icon: <Settings className="w-4 h-4" />,
       component: <CalendarWidgetWrapper />,
       defaultExpanded: true,
-      priority: 'medium'
+      priority: "medium",
     },
     {
-      id: 'time',
-      title: 'Waktu',
+      id: "time",
+      title: "Waktu",
       icon: <Settings className="w-4 h-4" />,
       component: <TimeWidget />,
       defaultExpanded: true,
-      priority: 'medium'
+      priority: "medium",
     },
     {
-      id: 'articles',
-      title: 'Artikel Terbaru',
+      id: "articles",
+      title: "Artikel Terbaru",
       icon: <Settings className="w-4 h-4" />,
       component: <LatestArticles />,
       defaultExpanded: false,
-      priority: 'high'
+      priority: "high",
     },
     {
-      id: 'tags',
-      title: 'Tag Populer',
+      id: "tags",
+      title: "Tag Populer",
       icon: <Settings className="w-4 h-4" />,
       component: <CloudTag />,
       defaultExpanded: false,
-      priority: 'low'
+      priority: "low",
     },
     {
-      id: 'maps',
-      title: 'Lokasi',
+      id: "maps",
+      title: "Lokasi",
       icon: <Settings className="w-4 h-4" />,
       component: <MapsWidget />,
       defaultExpanded: false,
-      priority: 'low'
+      priority: "low",
     },
     {
-      id: 'blog-roll',
-      title: 'Blog Roll',
+      id: "blog-roll",
+      title: "Blog Roll",
       icon: <Settings className="w-4 h-4" />,
       component: <BlogRoll />,
       defaultExpanded: false,
-      priority: 'low'
-    }
+      priority: "low",
+    },
   ];
 
   // Initialize expanded sections
   useEffect(() => {
     const defaultExpanded = new Set(
       widgetSections
-        .filter(section => section.defaultExpanded)
-        .map(section => section.id)
+        .filter((section) => section.defaultExpanded)
+        .map((section) => section.id),
     );
     setExpandedSections(defaultExpanded);
   }, []);
 
   // Progressive loading for widgets
   useEffect(() => {
-    const priorities = ['high', 'medium', 'low'];
+    const priorities = ["high", "medium", "low"];
     let delay = 0;
 
-    priorities.forEach(priority => {
-      const widgets = widgetSections.filter(section => section.priority === priority);
+    priorities.forEach((priority) => {
+      const widgets = widgetSections.filter(
+        (section) => section.priority === priority,
+      );
 
-      widgets.forEach(widget => {
+      widgets.forEach((widget) => {
         setTimeout(() => {
-          setVisibleWidgets(prev => new Set([...prev, widget.id]));
+          setVisibleWidgets((prev) => new Set([...prev, widget.id]));
         }, delay);
         delay += 200; // Stagger loading
       });
@@ -138,7 +142,7 @@ export default function Sidebar() {
   }, []);
 
   const toggleSection = (sectionId: string) => {
-    setExpandedSections(prev => {
+    setExpandedSections((prev) => {
       const newSet = new Set(prev);
       if (newSet.has(sectionId)) {
         newSet.delete(sectionId);
@@ -171,7 +175,9 @@ export default function Sidebar() {
             <div
               key={section.id}
               className={`glass-morphism rounded-xl overflow-hidden transition-all duration-500 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
               }`}
             >
               {/* Section Header */}
@@ -188,7 +194,7 @@ export default function Sidebar() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  {section.priority === 'high' && (
+                  {section.priority === "high" && (
                     <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
                   )}
                   {isExpanded ? (
@@ -202,7 +208,9 @@ export default function Sidebar() {
               {/* Section Content */}
               <div
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                  isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                  isExpanded
+                    ? "max-h-[2000px] opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <div className="px-6 pb-4 max-h-[400px] overflow-y-auto custom-scrollbar">

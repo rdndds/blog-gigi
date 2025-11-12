@@ -1,21 +1,24 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import lightGallery from 'lightgallery';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-import lgZoom from 'lightgallery/plugins/zoom';
+import { useEffect, useRef } from "react";
+import lightGallery from "lightgallery";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
 
 // Import styles
-import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-zoom.css';
-import 'lightgallery/css/lg-thumbnail.css';
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
 
 interface LightboxGalleryProps {
   images: Array<{ image: string; title?: string }>;
   columns?: number;
 }
 
-export default function LightboxGallery({ images, columns = 3 }: LightboxGalleryProps) {
+export default function LightboxGallery({
+  images,
+  columns = 3,
+}: LightboxGalleryProps) {
   const galleryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,7 +27,7 @@ export default function LightboxGallery({ images, columns = 3 }: LightboxGallery
     const lg = lightGallery(galleryRef.current, {
       plugins: [lgThumbnail, lgZoom],
       speed: 500,
-      licenseKey: '0000-0000-000-0000'
+      licenseKey: "0000-0000-000-0000",
     });
 
     return () => {
@@ -35,10 +38,10 @@ export default function LightboxGallery({ images, columns = 3 }: LightboxGallery
   if (!images || images.length === 0) return null;
 
   const gridCols = {
-    1: 'grid-cols-1',
-    2: 'grid-cols-1 sm:grid-cols-2',
-    3: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3',
-    4: 'grid-cols-2 md:grid-cols-4',
+    1: "grid-cols-1",
+    2: "grid-cols-1 sm:grid-cols-2",
+    3: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3",
+    4: "grid-cols-2 md:grid-cols-4",
   };
 
   const colClass = gridCols[columns as keyof typeof gridCols] || gridCols[3];
@@ -69,14 +72,19 @@ export default function LightboxGallery({ images, columns = 3 }: LightboxGallery
             )}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
               <div className="bg-white/90 rounded-full p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
                   className="w-6 h-6 text-gray-800"
-                  fill="none" 
-                  viewBox="0 0 24 24" 
+                  fill="none"
+                  viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
                 </svg>
               </div>
             </div>
@@ -86,4 +94,3 @@ export default function LightboxGallery({ images, columns = 3 }: LightboxGallery
     </div>
   );
 }
-

@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Article } from '@/lib/markdown';
-import { format } from 'date-fns';
+import Link from "next/link";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Article } from "@/lib/markdown";
+import { format } from "date-fns";
 
 interface ArticleCardProps {
   article: Article;
 }
 
 export default function ArticleCard({ article }: ArticleCardProps) {
-  const formattedDate = format(new Date(article.date), 'MMM d, yyyy');
+  const formattedDate = format(new Date(article.date), "MMM d, yyyy");
 
   return (
     <Card className="group overflow-hidden border-0 shadow-soft hover:shadow-large transition-all duration-300 bg-white">
@@ -35,7 +35,11 @@ export default function ArticleCard({ article }: ArticleCardProps) {
         {/* Tags on image */}
         <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
           {article.tags.slice(0, 2).map((tag) => (
-            <Badge key={tag} variant="secondary" className="bg-white/95 text-gray-900 shadow-sm">
+            <Badge
+              key={tag}
+              variant="secondary"
+              className="bg-white/95 text-gray-900 shadow-sm"
+            >
               {tag}
             </Badge>
           ))}
@@ -61,9 +65,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
         </h3>
 
         {/* Excerpt */}
-        <p className="text-gray-600 line-clamp-3">
-          {article.excerpt}
-        </p>
+        <p className="text-gray-600 line-clamp-3">{article.excerpt}</p>
       </CardContent>
 
       <CardFooter className="p-6 pt-0">

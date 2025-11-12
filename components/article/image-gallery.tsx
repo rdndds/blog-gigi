@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 interface ImageGalleryProps {
   images: string[];
@@ -6,16 +6,16 @@ interface ImageGalleryProps {
   caption?: string;
 }
 
-export default function ImageGallery({ 
-  images, 
-  columns = 2, 
-  caption 
+export default function ImageGallery({
+  images,
+  columns = 2,
+  caption,
 }: ImageGalleryProps) {
   const gridCols = {
-    1: 'grid-cols-1',
-    2: 'grid-cols-1 md:grid-cols-2',
-    3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-    4: 'grid-cols-2 md:grid-cols-4'
+    1: "grid-cols-1",
+    2: "grid-cols-1 md:grid-cols-2",
+    3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+    4: "grid-cols-2 md:grid-cols-4",
   };
 
   const colClass = gridCols[columns as keyof typeof gridCols] || gridCols[2];

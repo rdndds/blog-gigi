@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 // Simple in-memory counter (in production, use a database)
 let visitorCount = 12547;

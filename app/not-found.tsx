@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { Home, ArrowLeft, Search, FileQuestion, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import SearchWidgetClient from '@/components/widgets/search-widget-client';
-import { useEffect, useState } from 'react';
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Home, ArrowLeft, Search, FileQuestion, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import SearchWidgetClient from "@/components/widgets/search-widget-client";
+import { useEffect, useState } from "react";
 
 interface Article {
   slug: string;
@@ -23,13 +23,13 @@ export default function NotFound() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('/api/articles');
+        const response = await fetch("/api/articles");
         if (response.ok) {
           const data = await response.json();
           setArticles(data);
         }
       } catch (error) {
-        console.error('Failed to fetch articles:', error);
+        console.error("Failed to fetch articles:", error);
       }
     };
 
@@ -41,10 +41,10 @@ export default function NotFound() {
   };
 
   const quickLinks = [
-    { name: 'Beranda', href: '/', icon: Home },
-    { name: 'Artikel', href: '/articles', icon: FileQuestion },
-    { name: 'Kesehatan Gigi', href: '/dental-health', icon: Sparkles },
-    { name: 'Tentang', href: '/about', icon: FileQuestion },
+    { name: "Beranda", href: "/", icon: Home },
+    { name: "Artikel", href: "/articles", icon: FileQuestion },
+    { name: "Kesehatan Gigi", href: "/dental-health", icon: Sparkles },
+    { name: "Tentang", href: "/about", icon: FileQuestion },
   ];
 
   return (
@@ -64,7 +64,8 @@ export default function NotFound() {
             Oops! Halaman Tidak Ditemukan
           </h1>
           <p className="text-lg text-gray-600 mb-2">
-            Halaman yang Anda cari mungkin telah dipindahkan, dihapus, atau tidak pernah ada.
+            Halaman yang Anda cari mungkin telah dipindahkan, dihapus, atau
+            tidak pernah ada.
           </p>
           <p className="text-md text-gray-500">
             Jangan khawatir, kami akan membantu Anda menemukan jalan kembali! 😊
@@ -91,7 +92,10 @@ export default function NotFound() {
             Kembali
           </Button>
           <Link href="/">
-            <Button variant="outline" className="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white">
+            <Button
+              variant="outline"
+              className="border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white"
+            >
               <Home className="w-4 h-4 mr-2" />
               Ke Beranda
             </Button>
@@ -116,7 +120,9 @@ export default function NotFound() {
         <Card className="mt-8 border-0 shadow-medium bg-gradient-to-r from-primary-100 to-accent-100">
           <CardContent className="p-6 text-center">
             <p className="text-sm text-gray-700">
-              <span className="font-semibold">💡 Tahukah Anda?</span> Sementara Anda di sini, jangan lupa untuk menyikat gigi 2 kali sehari dan flossing secara teratur! 🪥
+              <span className="font-semibold">💡 Tahukah Anda?</span> Sementara
+              Anda di sini, jangan lupa untuk menyikat gigi 2 kali sehari dan
+              flossing secara teratur! 🪥
             </p>
           </CardContent>
         </Card>

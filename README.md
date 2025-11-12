@@ -24,29 +24,33 @@ A professional dental health blog built with Next.js 14, featuring educational c
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone <repository-url>
 cd dental-health-blog
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 ```
 
 3. Set up environment variables
+
 ```bash
 cp .env.local.example .env.local
 # Edit .env.local with your API keys
 ```
 
 4. Run the development server
+
 ```bash
 npm run dev
 ```
@@ -102,6 +106,7 @@ Your article content here...
 ### Colors
 
 Edit `tailwind.config.ts` to customize the color scheme:
+
 - Primary: Professional Blue
 - Secondary: Medical Green
 - Accent: Trust Teal

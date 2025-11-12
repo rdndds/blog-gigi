@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { ArrowRight, User, Home } from 'lucide-react';
+import Link from "next/link";
+import { ArrowRight, User, Home } from "lucide-react";
 
 export default function PageNavigation() {
   return (
@@ -8,7 +8,7 @@ export default function PageNavigation() {
         <h3 className="text-lg font-heading font-semibold text-gray-900 mb-4">
           Jelajahi Halaman Lainnya
         </h3>
-        
+
         <Link
           href="/about"
           className="flex items-start gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-300 group"
@@ -21,7 +21,8 @@ export default function PageNavigation() {
               Tentang Saya
             </h4>
             <p className="text-sm text-gray-600 mt-1">
-              Kunjungi halaman Tentang Saya untuk mengenal penulis blog ini lebih dekat.
+              Kunjungi halaman Tentang Saya untuk mengenal penulis blog ini
+              lebih dekat.
             </p>
           </div>
           <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-primary-600 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />

@@ -1,31 +1,31 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Link2, ExternalLink } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link2, ExternalLink } from "lucide-react";
 
 // Mock data to avoid server-side imports
 const mockData = {
   usefulLinks: [
     {
       name: "Kemenkes RI",
-      url: "https://www.kemkes.go.id/"
+      url: "https://www.kemkes.go.id/",
     },
     {
       name: "PDGI",
-      url: "https://www.pdgi.or.id/"
+      url: "https://www.pdgi.or.id/",
     },
     {
       name: "WHO Oral Health",
-      url: "https://www.who.int/health-topics/oral-health"
+      url: "https://www.who.int/health-topics/oral-health",
     },
     {
       name: "Poltekkes Semarang",
-      url: "https://poltekkes-smg.ac.id/"
-    }
-  ]
+      url: "https://poltekkes-smg.ac.id/",
+    },
+  ],
 };
 
 export default function BlogRoll() {
   const data = mockData;
-  
+
   return (
     <div className="widget-base">
       <div className="space-y-4">

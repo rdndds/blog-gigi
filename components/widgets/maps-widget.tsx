@@ -1,7 +1,14 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { MapPin, ExternalLink, Navigation, Clock, Phone, Mail } from 'lucide-react';
+import { useState, useEffect } from "react";
+import {
+  MapPin,
+  ExternalLink,
+  Navigation,
+  Clock,
+  Phone,
+  Mail,
+} from "lucide-react";
 
 interface LocationData {
   locationName: string;
@@ -15,13 +22,15 @@ interface LocationData {
 
 // Mock data for development - replace with actual data fetching
 const mockLocationData: LocationData = {
-  locationName: 'Poltekkes Kemenkes Semarang',
-  locationAddress: 'Jl. Tirto Agung No.1, Pedalangan, Kec. Banyumanik, Semarang, Jawa Tengah',
-  googleMapsUrl: 'https://maps.google.com/?q=Poltekkes+Kemenkes+Semarang',
-  mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.8049399433845!2d110.45343737499015!3d-7.055841692948389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708bbf8e8b5c7b%3A0x1234567890abcdef!2sPoltekkes+Kemenkes+Semarang!5e0!3m2!1sen!2sid!4v1234567890',
-  phone: '+62 24 7474 531',
-  email: 'info@poltekkes-smg.ac.id',
-  hours: 'Senin - Jumat: 08:00 - 16:00'
+  locationName: "Poltekkes Kemenkes Semarang",
+  locationAddress:
+    "Jl. Tirto Agung No.1, Pedalangan, Kec. Banyumanik, Semarang, Jawa Tengah",
+  googleMapsUrl: "https://maps.google.com/?q=Poltekkes+Kemenkes+Semarang",
+  mapEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.8049399433845!2d110.45343737499015!3d-7.055841692948389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708bbf8e8b5c7b%3A0x1234567890abcdef!2sPoltekkes+Kemenkes+Semarang!5e0!3m2!1sen!2sid!4v1234567890",
+  phone: "+62 24 7474 531",
+  email: "info@poltekkes-smg.ac.id",
+  hours: "Senin - Jumat: 08:00 - 16:00",
 };
 
 export default function MapsWidget() {
@@ -34,7 +43,7 @@ export default function MapsWidget() {
     const fetchLocationData = async () => {
       setLoading(true);
       // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       setLocationData(mockLocationData);
       setLoading(false);
     };
@@ -102,7 +111,9 @@ export default function MapsWidget() {
             <div className="p-1.5 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg">
               <MapPin className="w-4 h-4 text-white" />
             </div>
-            <span className="text-sm font-semibold text-neutral-800">Lokasi Kami</span>
+            <span className="text-sm font-semibold text-neutral-800">
+              Lokasi Kami
+            </span>
           </div>
           <div className="flex items-center gap-1 text-primary-600">
             <Navigation className="w-3 h-3" />
@@ -118,7 +129,9 @@ export default function MapsWidget() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center">
                   <div className="text-center space-y-2">
                     <MapPin className="w-12 h-12 text-primary-400 mx-auto" />
-                    <p className="text-sm text-neutral-600">Map tidak tersedia</p>
+                    <p className="text-sm text-neutral-600">
+                      Map tidak tersedia
+                    </p>
                   </div>
                 </div>
               ) : (

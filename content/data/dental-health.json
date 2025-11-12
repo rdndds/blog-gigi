@@ -33,15 +33,15 @@
     "images": [
       {
         "id": "image4",
-        "src": "/images/uploads/image1.jpg",
-        "alt": "Poster 6 langkah sikat gigi yang benar",
+        "src": "/images/uploads/image4.jpg",
+        "alt": "Poster 6 langkah sikat gigi",
         "title": "Poster 6 langkah sikat gigi",
         "caption": "Panduan visual 6 langkah menyikat gigi yang benar untuk edukasi anak dan remaja."
       },
       {
         "id": "image5",
-        "src": "/images/uploads/image2.png",
-        "alt": "Demonstrasi penggunaan phantom untuk edukasi kesehatan gigi",
+        "src": "/images/uploads/image5.jpg",
+        "alt": "Foto demo phantom",
         "title": "Foto demo phantom",
         "caption": "Demonstrasi edukasi kesehatan gigi menggunakan model phantom gigi."
       }

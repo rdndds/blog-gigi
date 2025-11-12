@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Tag, TrendingUp, Hash } from 'lucide-react';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { Tag, TrendingUp, Hash } from "lucide-react";
+import Link from "next/link";
 
 interface TagData {
   name: string;
@@ -12,16 +12,16 @@ interface TagData {
 
 // Mock data for development - replace with actual data fetching
 const mockTags: TagData[] = [
-  { name: 'karies', count: 15, weight: 1.0 },
-  { name: 'edukasi', count: 12, weight: 0.85 },
-  { name: 'anak', count: 10, weight: 0.75 },
-  { name: '3D', count: 8, weight: 0.65 },
-  { name: 'digital', count: 7, weight: 0.6 },
-  { name: 'preventif', count: 6, weight: 0.55 },
-  { name: 'gigi', count: 5, weight: 0.5 },
-  { name: 'kesehatan', count: 4, weight: 0.45 },
-  { name: 'teknologi', count: 3, weight: 0.4 },
-  { name: 'inovasi', count: 2, weight: 0.35 },
+  { name: "karies", count: 15, weight: 1.0 },
+  { name: "edukasi", count: 12, weight: 0.85 },
+  { name: "anak", count: 10, weight: 0.75 },
+  { name: "3D", count: 8, weight: 0.65 },
+  { name: "digital", count: 7, weight: 0.6 },
+  { name: "preventif", count: 6, weight: 0.55 },
+  { name: "gigi", count: 5, weight: 0.5 },
+  { name: "kesehatan", count: 4, weight: 0.45 },
+  { name: "teknologi", count: 3, weight: 0.4 },
+  { name: "inovasi", count: 2, weight: 0.35 },
 ];
 
 export default function CloudTag() {
@@ -34,7 +34,7 @@ export default function CloudTag() {
     const fetchTags = async () => {
       setLoading(true);
       // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise((resolve) => setTimeout(resolve, 800));
       setTags(mockTags);
       setLoading(false);
     };
@@ -96,15 +96,15 @@ export default function CloudTag() {
   // Calculate font sizes based on weight
   const getFontSize = (weight: number) => {
     const baseSize = 0.75; // 12px
-    const maxSize = 1.5;   // 24px
+    const maxSize = 1.5; // 24px
     return baseSize + (maxSize - baseSize) * weight;
   };
 
   const getColorIntensity = (weight: number) => {
-    if (weight >= 0.8) return 'text-primary-700 bg-primary-100';
-    if (weight >= 0.6) return 'text-primary-600 bg-primary-50';
-    if (weight >= 0.4) return 'text-neutral-600 bg-neutral-50';
-    return 'text-neutral-500 bg-neutral-100';
+    if (weight >= 0.8) return "text-primary-700 bg-primary-100";
+    if (weight >= 0.6) return "text-primary-600 bg-primary-50";
+    if (weight >= 0.4) return "text-neutral-600 bg-neutral-50";
+    return "text-neutral-500 bg-neutral-100";
   };
 
   return (
@@ -116,7 +116,9 @@ export default function CloudTag() {
             <div className="p-1.5 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg">
               <Tag className="w-4 h-4 text-white" />
             </div>
-            <span className="text-sm font-semibold text-neutral-800">Tag Populer</span>
+            <span className="text-sm font-semibold text-neutral-800">
+              Tag Populer
+            </span>
           </div>
           <div className="flex items-center gap-1 text-primary-600">
             <TrendingUp className="w-3 h-3" />
@@ -138,12 +140,12 @@ export default function CloudTag() {
                 className={`
                   relative px-3 py-1.5 rounded-full transition-all duration-300 ease-out
                   ${colorClass}
-                  ${isHovered ? 'scale-110 shadow-lg z-10' : 'hover:scale-105 hover:shadow-md'}
+                  ${isHovered ? "scale-110 shadow-lg z-10" : "hover:scale-105 hover:shadow-md"}
                   font-medium
                 `}
                 style={{
                   fontSize: `${fontSize}rem`,
-                  animationDelay: `${index * 100}ms`
+                  animationDelay: `${index * 100}ms`,
                 }}
                 onMouseEnter={() => setHoveredTag(tag.name)}
                 onMouseLeave={() => setHoveredTag(null)}
@@ -154,18 +156,17 @@ export default function CloudTag() {
                 <div
                   className={`
                     absolute inset-0 rounded-full transition-opacity duration-300
-                    ${isHovered ? 'opacity-100' : 'opacity-0'}
+                    ${isHovered ? "opacity-100" : "opacity-0"}
                   `}
                   style={{
-                    background: 'radial-gradient(circle, rgba(255,112,67,0.1) 0%, transparent 70%)',
-                    transform: 'scale(1.2)'
+                    background:
+                      "radial-gradient(circle, rgba(255,112,67,0.1) 0%, transparent 70%)",
+                    transform: "scale(1.2)",
                   }}
                 />
 
                 {/* Count indicator */}
-                <span className="ml-1 text-xs opacity-70">
-                  {tag.count}
-                </span>
+                <span className="ml-1 text-xs opacity-70">{tag.count}</span>
 
                 {/* Hover tooltip */}
                 {isHovered && (

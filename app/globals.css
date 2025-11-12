@@ -4,8 +4,8 @@
 
 :root {
   /* Typography */
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Poppins', sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Poppins", sans-serif;
 
   /* Primary Color Palette */
   --color-primary-50: #fff7f2;
@@ -83,9 +83,12 @@
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
@@ -176,13 +179,21 @@
 
   /* Card Variants */
   .card-primary {
-    background: linear-gradient(135deg, var(--color-primary-50), var(--color-primary-100));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-50),
+      var(--color-primary-100)
+    );
     border: 1px solid var(--color-primary-200);
     box-shadow: 0 8px 24px rgba(255, 112, 67, 0.15);
   }
 
   .card-secondary {
-    background: linear-gradient(135deg, var(--color-secondary-50), var(--color-secondary-100));
+    background: linear-gradient(
+      135deg,
+      var(--color-secondary-50),
+      var(--color-secondary-100)
+    );
     border: 1px solid var(--color-secondary-200);
     box-shadow: 0 8px 24px rgba(20, 184, 166, 0.15);
   }
@@ -195,7 +206,11 @@
 
   /* Button Variants */
   .btn-primary {
-    background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-600));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-500),
+      var(--color-primary-600)
+    );
     color: white;
     padding: var(--spacing-md) var(--spacing-xl);
     border-radius: var(--radius-xl);
@@ -207,7 +222,11 @@
   .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-600),
+      var(--color-primary-700)
+    );
   }
 
   .btn-secondary {
@@ -263,7 +282,11 @@
 
   /* Gradient Text */
   .gradient-text {
-    background: linear-gradient(135deg, var(--color-primary-600), var(--color-secondary-500));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-600),
+      var(--color-secondary-500)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -278,7 +301,12 @@
 
   /* Loading States */
   .skeleton {
-    background: linear-gradient(90deg, var(--color-neutral-200) 25%, var(--color-neutral-100) 50%, var(--color-neutral-200) 75%);
+    background: linear-gradient(
+      90deg,
+      var(--color-neutral-200) 25%,
+      var(--color-neutral-100) 50%,
+      var(--color-neutral-200) 75%
+    );
     background-size: 200% 100%;
     animation: skeleton-loading 1.5s infinite;
   }

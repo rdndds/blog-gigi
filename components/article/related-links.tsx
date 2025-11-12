@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { ExternalLink, Link2 } from 'lucide-react';
+import { useState } from "react";
+import { ExternalLink, Link2 } from "lucide-react";
 
 interface RelatedLinksProps {
   links: Array<{ title: string; url: string }>;
@@ -9,7 +9,7 @@ interface RelatedLinksProps {
 
 function FaviconImage({ url }: { url: string }) {
   const [error, setError] = useState(false);
-  
+
   const getFaviconUrl = (url: string) => {
     try {
       const domain = new URL(url).origin;
@@ -43,10 +43,10 @@ export default function RelatedLinks({ links }: RelatedLinksProps) {
 
   const getDomain = (url: string) => {
     try {
-      const domain = new URL(url).hostname.replace('www.', '');
+      const domain = new URL(url).hostname.replace("www.", "");
       return domain;
     } catch {
-      return 'Link';
+      return "Link";
     }
   };
 
@@ -58,11 +58,11 @@ export default function RelatedLinks({ links }: RelatedLinksProps) {
           Lihat Juga
         </h3>
       </div>
-      
+
       <div className="space-y-3">
         {links.map((link, index) => {
           const domain = getDomain(link.url);
-          
+
           return (
             <a
               key={index}

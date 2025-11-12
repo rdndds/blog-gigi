@@ -1,33 +1,33 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import CalendarWidget from './calendar-widget';
-import { Article } from '@/lib/markdown';
+import { useState, useEffect } from "react";
+import CalendarWidget from "./calendar-widget";
+import { Article } from "@/lib/markdown";
 
 // Mock articles data to avoid server-side imports
 const mockArticles: Article[] = [
   {
-    slug: 'panduan-kesehatan-gigi',
-    title: 'Panduan Lengkap Kesehatan Gigi Anak',
-    excerpt: 'Tips lengkap menjaga kesehatan gigi anak',
-    date: '2025-01-15',
-    author: 'Erdinta Ovielia',
-    readTime: '5 menit',
-    tags: ['edukasi', 'anak'],
-    content: '',
-    image: ''
+    slug: "panduan-kesehatan-gigi",
+    title: "Panduan Lengkap Kesehatan Gigi Anak",
+    excerpt: "Tips lengkap menjaga kesehatan gigi anak",
+    date: "2025-01-15",
+    author: "Erdinta Ovielia",
+    readTime: "5 menit",
+    tags: ["edukasi", "anak"],
+    content: "",
+    image: "",
   },
   {
-    slug: 'teknologi-3d-kedokteran',
-    title: 'Teknologi 3D dalam Kedokteran Gigi',
-    excerpt: 'Inovasi teknologi 3D untuk kedokteran gigi modern',
-    date: '2025-01-20',
-    author: 'Dr. Sarah',
-    readTime: '7 menit',
-    tags: ['teknologi', '3D'],
-    content: '',
-    image: ''
-  }
+    slug: "teknologi-3d-kedokteran",
+    title: "Teknologi 3D dalam Kedokteran Gigi",
+    excerpt: "Inovasi teknologi 3D untuk kedokteran gigi modern",
+    date: "2025-01-20",
+    author: "Dr. Sarah",
+    readTime: "7 menit",
+    tags: ["teknologi", "3D"],
+    content: "",
+    image: "",
+  },
 ];
 
 export default function CalendarWidgetWrapper() {
@@ -39,7 +39,7 @@ export default function CalendarWidgetWrapper() {
     const fetchCalendarData = async () => {
       setLoading(true);
       // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
       // Map mock articles to calendar format
       const articles = mockArticles.map((article) => ({

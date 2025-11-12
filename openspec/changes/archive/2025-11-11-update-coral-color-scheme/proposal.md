@@ -1,7 +1,9 @@
 ## Why
+
 Transform the current pink-based color palette to a coral color scheme to provide a fresh, vibrant aesthetic while maintaining the healthcare blog's professional and accessible design for the Indonesian dental health audience.
 
 ## What Changes
+
 - Replace all pink-based color tokens (primary, secondary, accent) with coral-based color palette in Tailwind configuration
 - Update global CSS gradients and background colors to use coral variants
 - Modify all UI components (buttons, cards, badges) to use coral color scheme
@@ -10,6 +12,7 @@ Transform the current pink-based color palette to a coral color scheme to provid
 - Maintain accessibility contrast ratios and healthcare-appropriate visual hierarchy
 
 ## Impact
+
 - **Affected specs**: ui-system (color theming capability)
 - **Affected code**:
   - `tailwind.config.ts:12-49` (color tokens)

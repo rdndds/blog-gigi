@@ -1,6 +1,6 @@
-import { Stethoscope, Award, Heart, Users, MapPin } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { getAboutData } from '@/lib/content';
+import { Stethoscope, Award, Heart, Users, MapPin } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { getAboutData } from "@/lib/content";
 
 export default function AboutPage() {
   const data = getAboutData();
@@ -13,9 +13,7 @@ export default function AboutPage() {
           <h1 className="text-5xl font-heading font-bold text-gray-900 mb-4">
             {data.pageTitle}
           </h1>
-          <p className="text-xl text-gray-600">
-            {data.pageSubtitle}
-          </p>
+          <p className="text-xl text-gray-600">{data.pageSubtitle}</p>
         </div>
 
         {/* Profile Section */}
@@ -48,11 +46,15 @@ export default function AboutPage() {
           <Card className="border-0 shadow-soft hover:shadow-large transition-shadow">
             <CardContent className="p-6">
               <Award className="w-12 h-12 text-primary-600 mb-4" />
-              <h3 className="text-xl font-heading font-semibold mb-3">Tujuan Blog</h3>
+              <h3 className="text-xl font-heading font-semibold mb-3">
+                Tujuan Blog
+              </h3>
               <ul className="space-y-2 text-gray-600">
-                {data.purposeList.map((item: { item: string }, index: number) => (
-                  <li key={index}>• {item.item}</li>
-                ))}
+                {data.purposeList.map(
+                  (item: { item: string }, index: number) => (
+                    <li key={index}>• {item.item}</li>
+                  ),
+                )}
               </ul>
             </CardContent>
           </Card>
@@ -60,11 +62,15 @@ export default function AboutPage() {
           <Card className="border-0 shadow-soft hover:shadow-large transition-shadow">
             <CardContent className="p-6">
               <Users className="w-12 h-12 text-secondary-600 mb-4" />
-              <h3 className="text-xl font-heading font-semibold mb-3">Pengalaman</h3>
+              <h3 className="text-xl font-heading font-semibold mb-3">
+                Pengalaman
+              </h3>
               <ul className="space-y-2 text-gray-600">
-                {data.experienceList.map((item: { item: string }, index: number) => (
-                  <li key={index}>• {item.item}</li>
-                ))}
+                {data.experienceList.map(
+                  (item: { item: string }, index: number) => (
+                    <li key={index}>• {item.item}</li>
+                  ),
+                )}
               </ul>
             </CardContent>
           </Card>

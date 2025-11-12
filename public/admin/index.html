@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -7,14 +7,16 @@
     <style>
       /* Custom styling for better CMS experience */
       .cms-editor-wrapper {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
       }
     </style>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
-    
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
     <!-- Custom Gallery Widget -->
     <script>
       // Register custom editor component for image gallery
@@ -29,8 +31,8 @@
             field: {
               name: "image",
               label: "Gambar",
-              widget: "image"
-            }
+              widget: "image",
+            },
           },
           {
             name: "columns",
@@ -41,49 +43,50 @@
               { label: "1 Kolom", value: "1" },
               { label: "2 Kolom", value: "2" },
               { label: "3 Kolom", value: "3" },
-              { label: "4 Kolom", value: "4" }
-            ]
+              { label: "4 Kolom", value: "4" },
+            ],
           },
           {
             name: "caption",
             label: "Caption (Opsional)",
             widget: "string",
-            required: false
-          }
+            required: false,
+          },
         ],
-        pattern: /^<ImageGallery images=\{(\[[\s\S]*?\])\} columns=\{(\d+)\}(?: caption="([^"]*)")?\s*\/>$/,
-        fromBlock: function(match) {
+        pattern:
+          /^<ImageGallery images=\{(\[[\s\S]*?\])\} columns=\{(\d+)\}(?: caption="([^"]*)")?\s*\/>$/,
+        fromBlock: function (match) {
           return {
             images: JSON.parse(match[1]),
             columns: match[2],
-            caption: match[3] || ""
+            caption: match[3] || "",
           };
         },
-        toBlock: function(obj) {
+        toBlock: function (obj) {
           const imagesJson = JSON.stringify(obj.images || []);
           const columns = obj.columns || "2";
           const caption = obj.caption ? ` caption="${obj.caption}"` : "";
           return `<ImageGallery images={${imagesJson}} columns={${columns}}${caption} />`;
         },
-        toPreview: function(obj) {
+        toPreview: function (obj) {
           const images = obj.images || [];
           const columns = obj.columns || "2";
           const caption = obj.caption || "";
-          
+
           let html = `<div style="display: grid; grid-template-columns: repeat(${columns}, 1fr); gap: 10px; margin: 20px 0;">`;
-          
-          images.forEach(img => {
+
+          images.forEach((img) => {
             html += `<img src="${img}" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;" />`;
           });
-          
+
           html += `</div>`;
-          
+
           if (caption) {
             html += `<p style="text-align: center; font-style: italic; color: #666; margin-top: 5px;">${caption}</p>`;
           }
-          
+
           return html;
-        }
+        },
       });
 
       // Register custom editor component for single image with caption
@@ -94,36 +97,36 @@
           {
             name: "image",
             label: "Gambar",
-            widget: "image"
+            widget: "image",
           },
           {
             name: "alt",
             label: "Alt Text",
-            widget: "string"
+            widget: "string",
           },
           {
             name: "caption",
             label: "Caption",
             widget: "string",
-            required: false
-          }
+            required: false,
+          },
         ],
         pattern: /^!\[([^\]]*)\]\(([^)]+)\)(?:\n\*(.+)\*)?$/,
-        fromBlock: function(match) {
+        fromBlock: function (match) {
           return {
             alt: match[1],
             image: match[2],
-            caption: match[3] || ""
+            caption: match[3] || "",
           };
         },
-        toBlock: function(obj) {
+        toBlock: function (obj) {
           let markdown = `![${obj.alt || ""}](${obj.image})`;
           if (obj.caption) {
             markdown += `\n*${obj.caption}*`;
           }
           return markdown;
         },
-        toPreview: function(obj) {
+        toPreview: function (obj) {
           let html = `<figure style="margin: 20px 0; text-align: center;">`;
           html += `<img src="${obj.image}" alt="${obj.alt || ""}" style="max-width: 100%; height: auto; border-radius: 8px;" />`;
           if (obj.caption) {
@@ -131,7 +134,7 @@
           }
           html += `</figure>`;
           return html;
-        }
+        },
       });
 
       // Register custom editor component for info box
@@ -144,41 +147,41 @@
             label: "Tipe",
             widget: "select",
             default: "info",
-            options: ["info", "warning", "success", "error"]
+            options: ["info", "warning", "success", "error"],
           },
           {
             name: "title",
             label: "Judul",
             widget: "string",
-            required: false
+            required: false,
           },
           {
             name: "content",
             label: "Konten",
-            widget: "text"
-          }
+            widget: "text",
+          },
         ],
         pattern: /^:::(\w+)\s*(?:\[([^\]]+)\])?\n([\s\S]+?)\n:::$/,
-        fromBlock: function(match) {
+        fromBlock: function (match) {
           return {
             type: match[1],
             title: match[2] || "",
-            content: match[3]
+            content: match[3],
           };
         },
-        toBlock: function(obj) {
+        toBlock: function (obj) {
           const title = obj.title ? `[${obj.title}]` : "";
           return `:::${obj.type} ${title}\n${obj.content}\n:::`;
         },
-        toPreview: function(obj) {
+        toPreview: function (obj) {
           const colors = {
             info: { bg: "#e3f2fd", border: "#2196f3", text: "#1976d2" },
             warning: { bg: "#fff3e0", border: "#ff9800", text: "#f57c00" },
             success: { bg: "#e8f5e9", border: "#4caf50", text: "#388e3c" },
-            error: { bg: "#ffebee", border: "#f44336", text: "#d32f2f" }
+            error: { bg: "#ffebee", border: "#f44336", text: "#d32f2f" },
           };
           const color = colors[obj.type] || colors.info;
-          
+
           let html = `<div style="background: ${color.bg}; border-left: 4px solid ${color.border}; padding: 15px; margin: 20px 0; border-radius: 4px;">`;
           if (obj.title) {
             html += `<strong style="color: ${color.text}; display: block; margin-bottom: 8px;">${obj.title}</strong>`;
@@ -186,7 +189,7 @@
           html += `<p style="color: ${color.text}; margin: 0;">${obj.content}</p>`;
           html += `</div>`;
           return html;
-        }
+        },
       });
     </script>
   </body>

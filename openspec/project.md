@@ -1,9 +1,11 @@
 # Project Context
 
 ## Purpose
+
 This is a professional dental health blog called "Senyum Sehat untuk Indonesia Hebat" (Healthy Smiles for a Great Indonesia), created by Shalsha Billa. The blog serves as an educational platform for dental and oral health, supporting the National CKG (Free Health Check) Program 2025 in Semarang City. It provides comprehensive information about dental services, health education, and promotes community health awareness through accessible digital content.
 
 ## Tech Stack
+
 - **Framework**: Next.js 16 with App Router
 - **Language**: TypeScript 5.9.3
 - **Styling**: Tailwind CSS 3.4.18 with custom healthcare-themed color palette
@@ -19,6 +21,7 @@ This is a professional dental health blog called "Senyum Sehat untuk Indonesia H
 ## Project Conventions
 
 ### Code Style
+
 - TypeScript strict mode enabled
 - Component-based architecture with functional components and hooks
 - Tailwind CSS utility-first styling approach
@@ -27,6 +30,7 @@ This is a professional dental health blog called "Senyum Sehat untuk Indonesia H
 - Consistent naming conventions: kebab-case for files, PascalCase for components
 
 ### Architecture Patterns
+
 - **Next.js App Router**: Server components by default, client components marked with "use client"
 - **Content Management**: Markdown-based content with structured frontmatter
 - **Widget System**: Modular sidebar widgets (search, visitor counter, calendar, etc.)
@@ -35,17 +39,21 @@ This is a professional dental health blog called "Senyum Sehat untuk Indonesia H
 - **Image Optimization**: Next.js Image component with multiple format support
 
 ### Testing Strategy
+
 - ESLint configuration with Next.js rules for code quality
 - No testing framework currently configured (opportunity for improvement)
 
 ### Git Workflow
+
 - Main branch: `main` (production)
 - Development branch: `dev` (current working branch)
 - Conventional commit messages observed in recent commits
 - Feature branch workflow recommended
 
 ## Domain Context
+
 This is a healthcare-focused blog specifically targeting:
+
 - **Indonesian audience** with content in Bahasa Indonesia
 - **Dental health education** and public health awareness
 - **CKG Program 2025** (Cek Kesehatan Gratis - Free Health Check) support
@@ -56,6 +64,7 @@ This is a healthcare-focused blog specifically targeting:
 Content focuses on professional dental health information, community health activities, and public health education appropriate for Indonesian healthcare context.
 
 ## Important Constraints
+
 - **Language**: Primary content in Bahasa Indonesia
 - **Healthcare Accuracy**: All medical/dental content must be accurate and professional
 - **Cultural Context**: Content must be appropriate for Indonesian cultural context
@@ -64,6 +73,7 @@ Content focuses on professional dental health information, community health acti
 - **Static Hosting**: Designed for static deployment on platforms like Vercel
 
 ## External Dependencies
+
 - **No external APIs** currently integrated (opportunity for health data APIs)
 - **Image Hosting**: Local image storage in `/public/images/`
 - **WhatsApp Integration**: Direct WhatsApp contact functionality

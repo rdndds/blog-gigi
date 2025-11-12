@@ -1,9 +1,13 @@
-'use client';
+"use client";
 
-import { useState, useMemo } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar as CalendarIcon, ChevronLeft, ChevronRight } from 'lucide-react';
-import Link from 'next/link';
+import { useState, useMemo } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Calendar as CalendarIcon,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import Link from "next/link";
 
 interface CalendarWidgetProps {
   articles: Array<{
@@ -20,12 +24,22 @@ export default function CalendarWidget({ articles }: CalendarWidgetProps) {
   const month = currentDate.getMonth();
 
   // Indonesian day names
-  const dayNames = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
-  
+  const dayNames = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+
   // Indonesian month names
   const monthNames = [
-    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember",
   ];
 
   // Get article counts per date
@@ -181,23 +195,25 @@ export default function CalendarWidget({ articles }: CalendarWidgetProps) {
               <div key={index} className="relative">
                 {hasArticles ? (
                   <Link
-                    href={`/articles?date=${day.fullDate.toISOString().split('T')[0]}`}
+                    href={`/articles?date=${day.fullDate.toISOString().split("T")[0]}`}
                     className={`
                       aspect-square flex flex-col items-center justify-center text-xs rounded-md transition-all
                       ${
                         isToday(day.fullDate)
-                          ? 'bg-primary-600 text-white font-bold shadow-md'
+                          ? "bg-primary-600 text-white font-bold shadow-md"
                           : day.isCurrentMonth
-                          ? 'text-gray-900 hover:bg-primary-100 font-medium'
-                          : 'text-gray-400'
+                            ? "text-gray-900 hover:bg-primary-100 font-medium"
+                            : "text-gray-400"
                       }
-                      ${hasArticles && !isToday(day.fullDate) ? 'ring-2 ring-primary-300' : ''}
+                      ${hasArticles && !isToday(day.fullDate) ? "ring-2 ring-primary-300" : ""}
                     `}
-                    title={`${articleCount} artikel${dayArticles.length > 0 ? ': ' + dayArticles.map(a => a.title).join(', ') : ''}`}
+                    title={`${articleCount} artikel${dayArticles.length > 0 ? ": " + dayArticles.map((a) => a.title).join(", ") : ""}`}
                   >
                     <span>{day.date}</span>
                     {hasArticles && (
-                      <span className={`text-[8px] ${isToday(day.fullDate) ? 'text-white' : 'text-primary-600'}`}>
+                      <span
+                        className={`text-[8px] ${isToday(day.fullDate) ? "text-white" : "text-primary-600"}`}
+                      >
                         •{articleCount}
                       </span>
                     )}
@@ -208,10 +224,10 @@ export default function CalendarWidget({ articles }: CalendarWidgetProps) {
                       aspect-square flex items-center justify-center text-xs rounded-md
                       ${
                         isToday(day.fullDate)
-                          ? 'bg-primary-600 text-white font-bold shadow-md'
+                          ? "bg-primary-600 text-white font-bold shadow-md"
                           : day.isCurrentMonth
-                          ? 'text-gray-700'
-                          : 'text-gray-300'
+                            ? "text-gray-700"
+                            : "text-gray-300"
                       }
                     `}
                   >

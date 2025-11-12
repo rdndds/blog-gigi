@@ -1,9 +1,11 @@
 ## MODIFIED Requirements
 
 ### Requirement: Color Theme System
+
 The dental health blog SHALL provide a cohesive color theme system that supports professional healthcare branding while maintaining accessibility and visual appeal for Indonesian audiences.
 
 #### Scenario: Coral color palette implementation
+
 - **WHEN** the color theme system is configured
 - **THEN** all UI components SHALL use coral-based color tokens instead of pink
 - **AND** primary colors SHALL range from light coral (#fff7ed) to deep coral (#7c2d12)
@@ -12,6 +14,7 @@ The dental health blog SHALL provide a cohesive color theme system that supports
 - **AND** all color combinations SHALL maintain WCAG AA contrast ratios
 
 #### Scenario: Component color consistency
+
 - **WHEN** any UI component renders
 - **THEN** it SHALL inherit colors from the centralized coral theme tokens
 - **AND** buttons, cards, badges, and widgets SHALL display consistent coral styling
@@ -19,6 +22,7 @@ The dental health blog SHALL provide a cohesive color theme system that supports
 - **AND** focus states SHALL maintain accessibility with proper contrast
 
 #### Scenario: Healthcare-appropriate visual design
+
 - **WHEN** users view the dental health blog
 - **THEN** the coral color scheme SHALL project professionalism and trustworthiness
 - **AND** colors SHALL be warm and inviting without overwhelming medical content

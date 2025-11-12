@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Eye, TrendingUp, Users } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Eye, TrendingUp, Users } from "lucide-react";
 
 export default function VisitorCounter() {
   const [count, setCount] = useState<number>(0);
@@ -13,11 +13,11 @@ export default function VisitorCounter() {
   useEffect(() => {
     async function fetchCount() {
       try {
-        const res = await fetch('/api/visitor-count');
+        const res = await fetch("/api/visitor-count");
         const data = await res.json();
         setCount(data.count);
       } catch (error) {
-        console.error('Error fetching visitor count:', error);
+        console.error("Error fetching visitor count:", error);
         setCount(12547); // Fallback count
       } finally {
         setLoading(false);
@@ -78,7 +78,9 @@ export default function VisitorCounter() {
             <div className="p-1.5 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg">
               <Eye className="w-4 h-4 text-white" />
             </div>
-            <span className="text-sm font-semibold text-neutral-800">Total Pengunjung</span>
+            <span className="text-sm font-semibold text-neutral-800">
+              Total Pengunjung
+            </span>
           </div>
           <div className="flex items-center gap-1 text-green-600">
             <TrendingUp className="w-4 h-4" />
@@ -91,7 +93,7 @@ export default function VisitorCounter() {
         {/* Main counter */}
         <div className="relative">
           <div className="text-3xl font-bold text-gray-900 tabular-nums tracking-tight group-hover:text-primary-600 transition-colors">
-            {displayCount.toLocaleString('id-ID')}
+            {displayCount.toLocaleString("id-ID")}
           </div>
 
           {/* Animated background effect */}
@@ -106,7 +108,7 @@ export default function VisitorCounter() {
               Hari ini
             </div>
             <div className="text-sm font-semibold text-neutral-800">
-              {Math.floor(displayCount * 0.05).toLocaleString('id-ID')}
+              {Math.floor(displayCount * 0.05).toLocaleString("id-ID")}
             </div>
           </div>
           <div className="bg-white/60 backdrop-blur-sm rounded-lg p-2 border border-neutral-100">
@@ -127,7 +129,7 @@ export default function VisitorCounter() {
               className="h-full bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full animate-gradient transition-all duration-1000"
               style={{
                 width: `${Math.min((displayCount / 15000) * 100, 100)}%`,
-                backgroundSize: '200% 100%'
+                backgroundSize: "200% 100%",
               }}
             />
           </div>

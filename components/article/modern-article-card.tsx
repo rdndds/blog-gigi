@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import { Calendar, Clock, ArrowRight, User, BookOpen } from 'lucide-react';
-import { Article } from '@/lib/markdown';
-import { format } from 'date-fns';
-import Image from 'next/image';
+import Link from "next/link";
+import { Calendar, Clock, ArrowRight, User, BookOpen } from "lucide-react";
+import { Article } from "@/lib/markdown";
+import { format } from "date-fns";
+import Image from "next/image";
 
 interface ModernArticleCardProps {
   article?: Article;
@@ -75,13 +75,17 @@ function ArticleCardSkeleton({ featured = false }: { featured?: boolean }) {
   );
 }
 
-export default function ModernArticleCard({ article, featured = false, loading = false }: ModernArticleCardProps) {
+export default function ModernArticleCard({
+  article,
+  featured = false,
+  loading = false,
+}: ModernArticleCardProps) {
   // Show skeleton if loading or no article
   if (loading || !article) {
     return <ArticleCardSkeleton featured={featured} />;
   }
 
-  const formattedDate = format(new Date(article.date), 'MMM d, yyyy');
+  const formattedDate = format(new Date(article.date), "MMM d, yyyy");
 
   if (featured) {
     return (

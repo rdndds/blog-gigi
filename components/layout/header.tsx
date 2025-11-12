@@ -1,12 +1,16 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faYoutube,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,47 +23,52 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const progress = (scrollTop / docHeight) * 100;
       setScrollProgress(Math.min(progress, 100));
       setScrolled(scrollTop > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll(); // Call once to set initial state
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (mobileMenuOpen) {
       setIsAnimating(true);
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
       // Hide WhatsApp widget
-      const whatsappWidget = document.querySelector('.fixed.bottom-6.right-6.z-50') as HTMLElement;
+      const whatsappWidget = document.querySelector(
+        ".fixed.bottom-6.right-6.z-50",
+      ) as HTMLElement;
       if (whatsappWidget) {
-        whatsappWidget.style.display = 'none';
+        whatsappWidget.style.display = "none";
       }
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
       // Show WhatsApp widget
-      const whatsappWidget = document.querySelector('.fixed.bottom-6.right-6.z-50') as HTMLElement;
+      const whatsappWidget = document.querySelector(
+        ".fixed.bottom-6.right-6.z-50",
+      ) as HTMLElement;
       if (whatsappWidget) {
-        whatsappWidget.style.display = 'block';
+        whatsappWidget.style.display = "block";
       }
     }
   }, [mobileMenuOpen]);
 
   const navigation = [
-    { name: 'Beranda', href: '/' },
-    { name: 'Kesehatan Gigi', href: '/dental-health' },
-    { name: 'Tentang Saya', href: '/about' },
-    { name: 'Hobi', href: '/hobbies' },
-    { name: 'Artikel', href: '/articles' },
+    { name: "Beranda", href: "/" },
+    { name: "Kesehatan Gigi", href: "/dental-health" },
+    { name: "Tentang Saya", href: "/about" },
+    { name: "Hobi", href: "/hobbies" },
+    { name: "Artikel", href: "/articles" },
   ];
 
   const isActive = (href: string) => {
-    if (href === '/') {
-      return pathname === '/';
+    if (href === "/") {
+      return pathname === "/";
     }
     return pathname.startsWith(href);
   };
@@ -74,140 +83,156 @@ export default function Header() {
         />
       </div>
 
-      <header className={`sticky top-0 z-50 w-full border-b border-primary-100 transition-all duration-200 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md'
-          : 'bg-white'
-      }`}>
+      <header
+        className={`sticky top-0 z-50 w-full border-b border-primary-100 transition-all duration-200 ${
+          scrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white"
+        }`}
+      >
         <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2 group">
-          <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg group-hover:scale-110 transition-transform shadow-medium">
-            <img src="/images/icon.png" alt="Logo" className="w-6 h-6 text-white" />
-          </div>
-          <span className="text-xl font-heading font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
-            Senyum Cerdas 2025
-          </span>
-        </Link>
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg group-hover:scale-110 transition-transform shadow-medium">
+              <img
+                src="/images/icon.png"
+                alt="Logo"
+                className="w-6 h-6 text-white"
+              />
+            </div>
+            <span className="text-xl font-heading font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+              Senyum Cerdas 2025
+            </span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-1">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                isActive(item.href)
-                  ? 'bg-primary-100 text-primary-700 font-semibold'
-                  : 'text-gray-700 hover:text-primary-700 hover:bg-primary-50'
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive(item.href)
+                    ? "bg-primary-100 text-primary-700 font-semibold"
+                    : "text-gray-700 hover:text-primary-700 hover:bg-primary-50"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden hover:bg-primary-50 hover:text-primary-600 h-10 w-10"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </Button>
+        </nav>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <div
+              className={`fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300 ${
+                isAnimating ? "opacity-100" : "opacity-0"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            />
+
+            {/* Slide-out Menu */}
+            <div
+              className={`fixed top-0 right-0 bottom-0 w-full bg-white shadow-xl z-50 md:hidden transition-transform duration-300 ease-in-out flex flex-col ${
+                isAnimating ? "translate-x-0" : "translate-x-full"
               }`}
             >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden hover:bg-primary-50 hover:text-primary-600 h-10 w-10"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </Button>
-      </nav>
-
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <>
-          {/* Backdrop */}
-          <div 
-            className={`fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300 ${
-              isAnimating ? 'opacity-100' : 'opacity-0'
-            }`}
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          
-          {/* Slide-out Menu */}
-          <div className={`fixed top-0 right-0 bottom-0 w-full bg-white shadow-xl z-50 md:hidden transition-transform duration-300 ease-in-out flex flex-col ${
-            isAnimating ? 'translate-x-0' : 'translate-x-full'
-          }`}>
-            {/* Menu Header */}
-            <div className="flex items-center justify-between p-4 border-b border-primary-100">
-              <div className="flex items-center space-x-2">
-                <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-medium">
-                  <img src="/images/icon.png" alt="Logo" className="w-5 h-5 text-white" />
+              {/* Menu Header */}
+              <div className="flex items-center justify-between p-4 border-b border-primary-100">
+                <div className="flex items-center space-x-2">
+                  <div className="p-2 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg shadow-medium">
+                    <img
+                      src="/images/icon.png"
+                      alt="Logo"
+                      className="w-5 h-5 text-white"
+                    />
+                  </div>
+                  <span className="text-lg font-heading font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+                    Menu
+                  </span>
                 </div>
-                <span className="text-lg font-heading font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
-                  Menu
-                </span>
-              </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hover:bg-primary-50 hover:text-primary-600 h-10 w-10"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <X className="w-5 h-5" />
-              </Button>
-            </div>
-            
-            {/* Navigation Links */}
-            <nav className="flex-1 p-4 space-y-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all ${
-                    isActive(item.href)
-                      ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-medium'
-                      : 'text-gray-700 hover:bg-primary-50 hover:text-primary-700 hover:translate-x-1'
-                  }`}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hover:bg-primary-50 hover:text-primary-600 h-10 w-10"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
+                  <X className="w-5 h-5" />
+                </Button>
+              </div>
 
-            {/* Social Media Section */}
-            <div className="p-4 border-t border-primary-100 bg-gradient-to-br from-primary-50 to-white">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3">Ikuti Kami</h3>
-              <div className="flex gap-3 justify-center">
-                <a 
-                  href="https://instagram.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 text-white hover:shadow-large transition-all transform hover:scale-110"
-                  aria-label="Instagram"
-                >
-                  <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
-                </a>
-                <a 
-                  href="https://youtube.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-600 text-white hover:shadow-large transition-all transform hover:scale-110"
-                  aria-label="YouTube"
-                >
-                  <FontAwesomeIcon icon={faYoutube} className="w-6 h-6" />
-                </a>
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-500 text-white hover:shadow-large transition-all transform hover:scale-110"
-                  aria-label="LinkedIn"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
-                </a>
+              {/* Navigation Links */}
+              <nav className="flex-1 p-4 space-y-2">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all ${
+                      isActive(item.href)
+                        ? "bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-medium"
+                        : "text-gray-700 hover:bg-primary-50 hover:text-primary-700 hover:translate-x-1"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+
+              {/* Social Media Section */}
+              <div className="p-4 border-t border-primary-100 bg-gradient-to-br from-primary-50 to-white">
+                <h3 className="text-sm font-semibold text-gray-900 mb-3">
+                  Ikuti Kami
+                </h3>
+                <div className="flex gap-3 justify-center">
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 text-white hover:shadow-large transition-all transform hover:scale-110"
+                    aria-label="Instagram"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="https://youtube.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-600 text-white hover:shadow-large transition-all transform hover:scale-110"
+                    aria-label="YouTube"
+                  >
+                    <FontAwesomeIcon icon={faYoutube} className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-500 text-white hover:shadow-large transition-all transform hover:scale-110"
+                    aria-label="LinkedIn"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </>
-      )}
-    </header>
+          </>
+        )}
+      </header>
     </>
   );
 }

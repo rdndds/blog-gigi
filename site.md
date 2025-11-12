@@ -1,6 +1,7 @@
 # Dental Health Blog - Comprehensive Site Documentation
 
 ## Table of Contents
+
 1. [Project Overview](#project-overview)
 2. [Project Structure](#project-structure)
 3. [Pages](#pages)
@@ -16,6 +17,7 @@
 The "Dental Health Blog" is a Next.js 16 application focused on dental health education. The site is created by Shalsha Billa and supports the National Health Check (CKG) program of 2025 in Semarang City. The primary purpose is to educate the public about dental and oral health, with content covering various aspects of dental care, health programs, and related topics.
 
 The site is built with:
+
 - Next.js 16
 - React 19
 - TypeScript
@@ -76,6 +78,7 @@ The site is built with:
 ## Pages
 
 ### 1. Home Page (`/`)
+
 - **File**: `/app/page.tsx`
 - **Components Used**: `HeroSection`, `FeaturedArticles`, `Sidebar`
 - **Functionality**:
@@ -85,6 +88,7 @@ The site is built with:
   - Responsive grid layout (2 columns main content, 1 column sidebar on large screens)
 
 ### 2. About Page (`/about`)
+
 - **File**: `/app/about/page.tsx`
 - **Components Used**: `Card`, `CardContent`, `Stethoscope`, `Award`, `Heart`, `Users`, `MapPin` (Lucide React icons)
 - **Functionality**:
@@ -95,6 +99,7 @@ The site is built with:
   - Provides a link to open the location in Google Maps
 
 ### 3. Articles Page (`/articles`)
+
 - **File**: `/app/articles/page.tsx`
 - **Components Used**: `ArticleCard`, `SearchWidget`, `ChevronLeft`, `ChevronRight` (Lucide React icons)
 - **Functionality**:
@@ -106,6 +111,7 @@ The site is built with:
   - Responsive grid layout (1-2-3 columns based on screen size)
 
 ### 4. Article Detail Page (`/articles/[slug]`)
+
 - **File**: `/app/articles/[slug]/page.tsx`
 - **Components Used**: Various components from `components/article/` directory
 - **Functionality**:
@@ -116,6 +122,7 @@ The site is built with:
   - Includes share section for social media
 
 ### 5. Dental Health Page (`/dental-health`)
+
 - **File**: `/app/dental-health/page.tsx`
 - **Components Used**: `Card`, `CardContent`, `CardHeader`, `CardTitle`, `Sparkles`, `Shield`, `AlertCircle`, `CheckCircle`, `Heart` (Lucide React icons)
 - **Functionality**:
@@ -126,6 +133,7 @@ The site is built with:
   - Links to external resources
 
 ### 6. Hobbies Page (`/hobbies`)
+
 - **File**: `/app/hobbies/page.tsx`
 - **Components Used**: `Card`, `CardContent`, `Heart`, `Plane`, `Sparkles`, `Camera` (Lucide React icons)
 - **Functionality**:
@@ -136,6 +144,7 @@ The site is built with:
 ## Components
 
 ### Article Components (`/components/article/`)
+
 - `article-card.tsx`: Displays a card with article information (image, title, excerpt, date, author)
 - `image-gallery.tsx`: Shows article-related images in a gallery
 - `info-box.tsx`: Displays additional information related to articles
@@ -146,21 +155,25 @@ The site is built with:
 - `share-section.tsx`: Provides social sharing functionality
 
 ### Home Components (`/components/home/`)
+
 - `featured-articles.tsx`: Displays featured articles on the homepage
 - `hero-section.tsx`: Shows the hero section on the homepage
 
 ### Layout Components (`/components/layout/`)
+
 - `footer.tsx`: Page footer with copyright and navigation
 - `header.tsx`: Page header with navigation menu and logo
 - `sidebar.tsx`: Sidebar with various widgets
 
 ### UI Components (`/components/ui/`)
+
 - `badge.tsx`: Reusable badge component
 - `button.tsx`: Reusable button component
 - `card.tsx`: Reusable card component with header, content, and footer
 - `input.tsx`: Reusable input component
 
 ### Widgets (`/components/widgets/`)
+
 - `blog-roll.tsx`: Displays a list of blog posts
 - `calendar-widget-wrapper.tsx`: Wrapper for calendar widget
 - `calendar-widget.tsx`: Shows a calendar
@@ -178,44 +191,54 @@ The site is built with:
 The site includes several widgets that appear in the sidebar:
 
 ### Calendar Widget
+
 - Shows the current month calendar
 - Provides visual date selection
 
 ### Time Widget
+
 - Displays current time
 - Updates in real-time
 
 ### Latest Articles Widget
+
 - Shows titles of most recent articles
 - Links to full articles
 
 ### Search Widget
+
 - Allows users to search within articles
 - Filters by content, title, excerpts, or tags
 
 ### Cloud Tag
+
 - Displays popular tags in a cloud format
 - Enables quick navigation to articles with specific tags
 
 ### Visitor Counter
+
 - Tracks and displays the number of visitors
 - Shows visit statistics
 
 ### WhatsApp Widget
+
 - Fixed-position chat widget
 - Links to WhatsApp for direct communication
 
 ### Maps Widget
+
 - Embedded Google Maps
 - Shows location of health facilities
 
 ### Blog Roll
+
 - Lists recent blog posts
 - Provides quick access to articles
 
 ## Content Management
 
 ### Markdown Articles
+
 - Articles are stored as Markdown files in `/content/articles/`
 - Each article has frontmatter containing metadata:
   - `title`: Article title
@@ -228,6 +251,7 @@ The site includes several widgets that appear in the sidebar:
   - `relatedLinks`: External links related to the content
 
 ### Data Files
+
 - Configuration data is stored as JSON files in `/content/data/`
 - Includes:
   - `about.json`: About page content
@@ -237,6 +261,7 @@ The site includes several widgets that appear in the sidebar:
   - `widgets.json`: Widget configurations
 
 ### Static Assets
+
 - Images are stored in `/public/images/` in categorized folders:
   - `about/`: Images for about page
   - `articles/`: Article-related images
@@ -248,36 +273,43 @@ The site includes several widgets that appear in the sidebar:
 ## Functionality
 
 ### Search
+
 - Full-text search across articles
 - Filter by keyword or tag
 - Date-based filtering
 - Real-time search results
 
 ### Filtering
+
 - Tag-based filtering
 - Date-based filtering
 - Combined filtering options
 
 ### Pagination
+
 - Article listing with 6 articles per page
 - Previous/next navigation
 - Page number display
 
 ### Image Gallery
+
 - Lightbox functionality
 - Thumbnail navigation
 - Responsive design
 
 ### Social Sharing
+
 - Share articles on social media
 - Copy article URL to clipboard
 
 ### Responsive Design
+
 - Mobile-first approach
 - Responsive grid layouts
 - Adaptive components
 
 ### SEO
+
 - Proper metadata for each page
 - Semantic HTML structure
 - Optimized images
@@ -285,27 +317,32 @@ The site includes several widgets that appear in the sidebar:
 ## Styling and Design
 
 ### Color Palette
+
 - Primary colors: Various shades of pink/purple (#ec4899 as primary)
 - Secondary colors: Complementary colors
 - Accent colors: High-contrast colors for highlights
 
 ### Typography
+
 - Custom fonts defined via CSS variables
 - Heading font for titles
 - Sans-serif font for body text
 
 ### Spacing and Layout
+
 - Tailwind CSS utility classes for consistent spacing
 - Responsive grid system
 - Mobile-first design approach
 
 ### Shadows and Effects
+
 - Soft shadows for subtle depth
 - Medium shadows for cards
 - Large shadows for hover states
 - Smooth transitions between states
 
 ### Animation
+
 - Framer Motion for subtle animations
 - Hover effects on interactive elements
 - Smooth transitions between states
@@ -313,11 +350,13 @@ The site includes several widgets that appear in the sidebar:
 ## Configuration
 
 ### Next.js Configuration (`next.config.js`)
+
 - Image optimization for AVIF and WebP formats
 - Compression enabled
 - Powered-by header disabled
 
 ### Tailwind Configuration (`tailwind.config.ts`)
+
 - Responsive design breakpoints
 - Custom color palette
 - Font family definitions
@@ -325,6 +364,7 @@ The site includes several widgets that appear in the sidebar:
 - Custom plugin configuration
 
 ### Package Dependencies
+
 - Next.js: React framework
 - React: UI library
 - TypeScript: Type safety

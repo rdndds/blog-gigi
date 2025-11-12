@@ -1,6 +1,6 @@
-import { Article } from '@/lib/markdown';
-import ModernArticleCard from '@/components/article/modern-article-card';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { Article } from "@/lib/markdown";
+import ModernArticleCard from "@/components/article/modern-article-card";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 interface FeaturedArticlesProps {
   articles: Article[];
@@ -14,7 +14,9 @@ export default function FeaturedArticles({ articles }: FeaturedArticlesProps) {
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-neutral-100 px-4 py-2 rounded-full mb-6">
               <Sparkles className="w-4 h-4 text-neutral-600" />
-              <span className="text-sm font-medium text-neutral-700">Artikel Terbaru</span>
+              <span className="text-sm font-medium text-neutral-700">
+                Artikel Terbaru
+              </span>
             </div>
             <h2 className="text-4xl font-heading font-bold text-gray-900 mb-8">
               Artikel Pilihan
@@ -23,7 +25,9 @@ export default function FeaturedArticles({ articles }: FeaturedArticlesProps) {
               <div className="w-16 h-16 bg-neutral-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl">🦷</span>
               </div>
-              <p className="text-neutral-500">Belum ada artikel tersedia. Periksa kembali nanti!</p>
+              <p className="text-neutral-500">
+                Belum ada artikel tersedia. Periksa kembali nanti!
+              </p>
             </div>
           </div>
         </div>
@@ -36,19 +40,25 @@ export default function FeaturedArticles({ articles }: FeaturedArticlesProps) {
   const gridArticles = articles.slice(1, 7); // Show max 6 additional articles
 
   return (
-    <section id="featured-articles" className="py-16 bg-gradient-to-b from-white to-neutral-50">
+    <section
+      id="featured-articles"
+      className="py-16 bg-gradient-to-b from-white to-neutral-50"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-neutral-100 px-4 py-2 rounded-full mb-6">
             <Sparkles className="w-4 h-4 text-neutral-600" />
-            <span className="text-sm font-medium text-neutral-700">Artikel Terbaru</span>
+            <span className="text-sm font-medium text-neutral-700">
+              Artikel Terbaru
+            </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
             Artikel Pilihan
           </h2>
           <p className="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
-            Temukan insight terbaru tentang kesehatan gigi anak di era digital dan inovasi edukasi 3D
+            Temukan insight terbaru tentang kesehatan gigi anak di era digital
+            dan inovasi edukasi 3D
           </p>
           <a
             href="/articles"

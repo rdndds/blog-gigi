@@ -1,46 +1,53 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { FileText, ArrowRight, Calendar, Clock, TrendingUp } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { Article } from '@/lib/markdown';
-import { format } from 'date-fns';
+import Link from "next/link";
+import {
+  FileText,
+  ArrowRight,
+  Calendar,
+  Clock,
+  TrendingUp,
+} from "lucide-react";
+import { useState, useEffect } from "react";
+import { Article } from "@/lib/markdown";
+import { format } from "date-fns";
 
 // Mock data for development - replace with actual data fetching
 const mockArticles: Article[] = [
   {
-    slug: 'artikel-1',
-    title: 'Panduan Lengkap Kesehatan Gigi Anak di Era Digital',
-    excerpt: 'Tips dan trik menjaga kesehatan gigi anak dengan teknologi modern',
+    slug: "artikel-1",
+    title: "Panduan Lengkap Kesehatan Gigi Anak di Era Digital",
+    excerpt:
+      "Tips dan trik menjaga kesehatan gigi anak dengan teknologi modern",
     date: new Date().toISOString(),
-    author: 'Erdinta Ovielia',
-    readTime: '5 menit',
-    tags: ['edukasi', 'anak', 'digital'],
-    content: '',
-    image: ''
+    author: "Erdinta Ovielia",
+    readTime: "5 menit",
+    tags: ["edukasi", "anak", "digital"],
+    content: "",
+    image: "",
   },
   {
-    slug: 'artikel-2',
-    title: 'Inovasi 3D dalam Edukasi Kesehatan Gigi',
-    excerpt: 'Bagaimana teknologi 3D mengubah cara kita belajar kesehatan gigi',
+    slug: "artikel-2",
+    title: "Inovasi 3D dalam Edukasi Kesehatan Gigi",
+    excerpt: "Bagaimana teknologi 3D mengubah cara kita belajar kesehatan gigi",
     date: new Date(Date.now() - 86400000).toISOString(),
-    author: 'Dr. Sarah',
-    readTime: '7 menit',
-    tags: ['3D', 'teknologi', 'edukasi'],
-    content: '',
-    image: ''
+    author: "Dr. Sarah",
+    readTime: "7 menit",
+    tags: ["3D", "teknologi", "edukasi"],
+    content: "",
+    image: "",
   },
   {
-    slug: 'artikel-3',
-    title: 'Makanan Sehat untuk Gigi Kuat',
-    excerpt: 'Nutrisi terbaik untuk kesehatan gigi dan gusi anak',
+    slug: "artikel-3",
+    title: "Makanan Sehat untuk Gigi Kuat",
+    excerpt: "Nutrisi terbaik untuk kesehatan gigi dan gusi anak",
     date: new Date(Date.now() - 172800000).toISOString(),
-    author: 'Nutritionist Team',
-    readTime: '4 menit',
-    tags: ['nutrisi', 'makanan', 'kesehatan'],
-    content: '',
-    image: ''
-  }
+    author: "Nutritionist Team",
+    readTime: "4 menit",
+    tags: ["nutrisi", "makanan", "kesehatan"],
+    content: "",
+    image: "",
+  },
 ];
 
 export default function LatestArticles() {
@@ -52,7 +59,7 @@ export default function LatestArticles() {
     const fetchArticles = async () => {
       setLoading(true);
       // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       setArticles(mockArticles);
       setLoading(false);
     };
@@ -107,7 +114,9 @@ export default function LatestArticles() {
             <div className="w-12 h-12 bg-neutral-100 rounded-full mx-auto mb-3 flex items-center justify-center">
               <FileText className="w-6 h-6 text-neutral-400" />
             </div>
-            <p className="text-sm text-neutral-500">Belum ada artikel tersedia</p>
+            <p className="text-sm text-neutral-500">
+              Belum ada artikel tersedia
+            </p>
           </div>
         </div>
       </div>
@@ -123,7 +132,9 @@ export default function LatestArticles() {
             <div className="p-1.5 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg">
               <FileText className="w-4 h-4 text-white" />
             </div>
-            <span className="text-sm font-semibold text-neutral-800">Artikel Terbaru</span>
+            <span className="text-sm font-semibold text-neutral-800">
+              Artikel Terbaru
+            </span>
           </div>
           <div className="flex items-center gap-1 text-primary-600">
             <TrendingUp className="w-3 h-3" />
@@ -155,7 +166,7 @@ export default function LatestArticles() {
                   <div className="flex items-center gap-3">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
-                      {format(new Date(article.date), 'MMM d')}
+                      {format(new Date(article.date), "MMM d")}
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />

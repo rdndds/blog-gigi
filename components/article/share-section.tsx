@@ -1,9 +1,17 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Share2, Copy, Facebook, Twitter, Linkedin, MessageCircle, X } from 'lucide-react';
-import Link from 'next/link';
-import { Card, CardContent } from '@/components/ui/card';
+import { useState } from "react";
+import {
+  Share2,
+  Copy,
+  Facebook,
+  Twitter,
+  Linkedin,
+  MessageCircle,
+  X,
+} from "lucide-react";
+import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface ShareSectionProps {
   title: string;
@@ -14,7 +22,7 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
   const [showModal, setShowModal] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : url;
+  const shareUrl = typeof window !== "undefined" ? window.location.href : url;
   const shareText = encodeURIComponent(`${title} - Senyum Cerdas 2025`);
 
   const handleCopyLink = async () => {
@@ -24,8 +32,8 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
       setTimeout(() => setShowToast(false), 3000);
       setShowModal(false);
     } catch (err) {
-      console.error('Failed to copy:', err);
-      alert('Gagal menyalin link');
+      console.error("Failed to copy:", err);
+      alert("Gagal menyalin link");
     }
   };
 
@@ -41,11 +49,11 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
     const height = 500;
     const left = (window.screen.width - width) / 2;
     const top = (window.screen.height - height) / 2;
-    
+
     window.open(
       shareLinks[platform],
-      '_blank',
-      `width=${width},height=${height},left=${left},top=${top},toolbar=0,menubar=0,location=0,status=0,scrollbars=1,resizable=1`
+      "_blank",
+      `width=${width},height=${height},left=${left},top=${top},toolbar=0,menubar=0,location=0,status=0,scrollbars=1,resizable=1`,
     );
     setShowModal(false);
   };
@@ -57,7 +65,7 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
           <p className="text-gray-700 mb-4">
             Artikel ini bermanfaat? Bagikan ke teman-teman Anda!
           </p>
-          
+
           <div className="flex justify-center gap-3">
             <button
               onClick={() => setShowModal(true)}
@@ -77,16 +85,18 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
 
       {/* Share Modal */}
       {showModal && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
           onClick={() => setShowModal(false)}
         >
-          <div 
+          <div
             className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-gray-900">Bagikan Artikel</h3>
+              <h3 className="text-lg font-bold text-gray-900">
+                Bagikan Artikel
+              </h3>
               <button
                 onClick={() => setShowModal(false)}
                 className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -95,9 +105,7 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
               </button>
             </div>
 
-            <p className="text-sm text-gray-600 mb-6 line-clamp-2">
-              {title}
-            </p>
+            <p className="text-sm text-gray-600 mb-6 line-clamp-2">{title}</p>
 
             <div className="space-y-3">
               {/* Copy Link Button */}
@@ -111,7 +119,7 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
 
               {/* WhatsApp */}
               <button
-                onClick={() => handleShare('whatsapp')}
+                onClick={() => handleShare("whatsapp")}
                 className="w-full px-4 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors inline-flex items-center gap-3 font-medium"
               >
                 <MessageCircle className="w-5 h-5" />
@@ -120,7 +128,7 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
 
               {/* Facebook */}
               <button
-                onClick={() => handleShare('facebook')}
+                onClick={() => handleShare("facebook")}
                 className="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors inline-flex items-center gap-3 font-medium"
               >
                 <Facebook className="w-5 h-5" />
@@ -129,7 +137,7 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
 
               {/* Twitter */}
               <button
-                onClick={() => handleShare('twitter')}
+                onClick={() => handleShare("twitter")}
                 className="w-full px-4 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-lg transition-colors inline-flex items-center gap-3 font-medium"
               >
                 <Twitter className="w-5 h-5" />
@@ -138,7 +146,7 @@ export default function ShareSection({ title, url }: ShareSectionProps) {
 
               {/* LinkedIn */}
               <button
-                onClick={() => handleShare('linkedin')}
+                onClick={() => handleShare("linkedin")}
                 className="w-full px-4 py-3 bg-blue-700 hover:bg-blue-800 text-white rounded-lg transition-colors inline-flex items-center gap-3 font-medium"
               >
                 <Linkedin className="w-5 h-5" />

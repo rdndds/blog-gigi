@@ -1,5 +1,5 @@
-import ImageGallery from '@/components/article/image-gallery';
-import React from 'react';
+import ImageGallery from "@/components/article/image-gallery";
+import React from "react";
 
 /**
  * Parse and render custom components from markdown content
@@ -7,8 +7,9 @@ import React from 'react';
  */
 export function parseCustomComponents(content: string): React.ReactNode {
   // Pattern to match ImageGallery component
-  const galleryPattern = /<ImageGallery\s+images=\{(\[[\s\S]*?\])\}\s+columns=\{(\d+)\}(?:\s+caption="([^"]*)")?\s*\/>/g;
-  
+  const galleryPattern =
+    /<ImageGallery\s+images=\{(\[[\s\S]*?\])\}\s+columns=\{(\d+)\}(?:\s+caption="([^"]*)")?\s*\/>/g;
+
   const parts: (string | React.ReactElement)[] = [];
   let lastIndex = 0;
   let match;
@@ -31,7 +32,7 @@ export function parseCustomComponents(content: string): React.ReactNode {
           images,
           columns,
           caption,
-        })
+        }),
       );
     } catch (e) {
       // If parsing fails, keep the original text

@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { Search, Calendar, Tag as TagIcon } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
-import { format } from 'date-fns';
+import { useState, useEffect, useRef } from "react";
+import { Search, Calendar, Tag as TagIcon } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { format } from "date-fns";
 
 interface Article {
   slug: string;
@@ -21,8 +21,10 @@ interface SearchWidgetClientProps {
   articles: Article[];
 }
 
-export default function SearchWidgetClient({ articles }: SearchWidgetClientProps) {
-  const [query, setQuery] = useState('');
+export default function SearchWidgetClient({
+  articles,
+}: SearchWidgetClientProps) {
+  const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState<Article[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -31,12 +33,15 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
   // Close suggestions when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
         setShowSuggestions(false);
       }
     }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Search and filter articles
@@ -52,7 +57,7 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
       (article) =>
         article.title.toLowerCase().includes(searchLower) ||
         article.excerpt.toLowerCase().includes(searchLower) ||
-        article.tags.some((tag) => tag.toLowerCase().includes(searchLower))
+        article.tags.some((tag) => tag.toLowerCase().includes(searchLower)),
     );
 
     setSuggestions(filtered.slice(0, 5)); // Show top 5 results
@@ -70,34 +75,36 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!showSuggestions || suggestions.length === 0) return;
 
-    if (e.key === 'ArrowDown') {
+    if (e.key === "ArrowDown") {
       e.preventDefault();
-      setSelectedIndex((prev) => (prev < suggestions.length - 1 ? prev + 1 : prev));
-    } else if (e.key === 'ArrowUp') {
+      setSelectedIndex((prev) =>
+        prev < suggestions.length - 1 ? prev + 1 : prev,
+      );
+    } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setSelectedIndex((prev) => (prev > 0 ? prev - 1 : -1));
-    } else if (e.key === 'Enter' && selectedIndex >= 0) {
+    } else if (e.key === "Enter" && selectedIndex >= 0) {
       e.preventDefault();
       window.location.href = `/articles/${suggestions[selectedIndex].slug}`;
-    } else if (e.key === 'Escape') {
+    } else if (e.key === "Escape") {
       setShowSuggestions(false);
     }
   };
 
   const highlightMatch = (text: string, query: string) => {
     if (!query.trim()) return text;
-    
-    const regex = new RegExp(`(${query})`, 'gi');
+
+    const regex = new RegExp(`(${query})`, "gi");
     const parts = text.split(regex);
-    
-    return parts.map((part, index) => 
+
+    return parts.map((part, index) =>
       regex.test(part) ? (
         <mark key={index} className="bg-yellow-200 text-gray-900 font-semibold">
           {part}
         </mark>
       ) : (
         part
-      )
+      ),
     );
   };
 
@@ -124,7 +131,11 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  onFocus={() => query.length >= 2 && suggestions.length > 0 && setShowSuggestions(true)}
+                  onFocus={() =>
+                    query.length >= 2 &&
+                    suggestions.length > 0 &&
+                    setShowSuggestions(true)
+                  }
                   className="pl-12 pr-12 h-12 bg-white/80 backdrop-blur-sm border-neutral-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-200"
                   autoComplete="off"
                 />
@@ -141,7 +152,7 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
             {/* Quick Tags */}
             <div className="flex flex-wrap gap-2">
               <span className="text-xs text-neutral-500">Populer:</span>
-              {['karies', 'edukasi', '3D', 'anak'].map((tag) => (
+              {["karies", "edukasi", "3D", "anak"].map((tag) => (
                 <button
                   key={tag}
                   onClick={() => setQuery(tag)}
@@ -169,8 +180,8 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
                   href={`/articles/${article.slug}`}
                   className={`block px-3 py-3 rounded-md transition-colors ${
                     index === selectedIndex
-                      ? 'bg-primary-50'
-                      : 'hover:bg-gray-50'
+                      ? "bg-primary-50"
+                      : "hover:bg-gray-50"
                   }`}
                   onClick={() => setShowSuggestions(false)}
                 >
@@ -186,12 +197,15 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
                       <div className="flex items-center gap-3 text-xs text-gray-500">
                         <span className="flex items-center gap-1">
                           <Calendar className="w-3 h-3" />
-                          {format(new Date(article.date), 'MMM d, yyyy')}
+                          {format(new Date(article.date), "MMM d, yyyy")}
                         </span>
                         {article.tags.length > 0 && (
                           <div className="flex items-center gap-1">
                             <TagIcon className="w-3 h-3" />
-                            <Badge variant="outline" className="text-[10px] px-1.5 py-0">
+                            <Badge
+                              variant="outline"
+                              className="text-[10px] px-1.5 py-0"
+                            >
                               {article.tags[0]}
                             </Badge>
                           </div>
@@ -222,9 +236,7 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
               <p className="text-sm text-gray-500">
                 Tidak ada hasil untuk "<strong>{query}</strong>"
               </p>
-              <p className="text-xs text-gray-400 mt-1">
-                Coba kata kunci lain
-              </p>
+              <p className="text-xs text-gray-400 mt-1">Coba kata kunci lain</p>
             </CardContent>
           </Card>
         </div>
@@ -232,4 +244,3 @@ export default function SearchWidgetClient({ articles }: SearchWidgetClientProps
     </div>
   );
 }
-

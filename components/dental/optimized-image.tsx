@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 interface OptimizedImageProps {
   src: string;
@@ -10,7 +10,12 @@ interface OptimizedImageProps {
   caption?: string;
 }
 
-export default function OptimizedImage({ src, alt, title, caption }: OptimizedImageProps) {
+export default function OptimizedImage({
+  src,
+  alt,
+  title,
+  caption,
+}: OptimizedImageProps) {
   const [imageError, setImageError] = useState(false);
 
   const handleError = () => {
